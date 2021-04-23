@@ -1,0 +1,37 @@
+[
+  {
+    "_id": {
+      "$oid": "608307d7efc44f2f9c2cadc9"
+    },
+    "name": "delivery",
+    "tags": ["grocery", "food", "medicines"]
+  },
+  {
+    "_id": {
+      "$oid": "608307d7efc44f2f9c2cadca"
+    },
+    "name": "medical",
+    "tags": ["masks", "oxygen-cylinders", "medicines"]
+  },
+  {
+    "_id": {
+      "$oid": "608307d7efc44f2f9c2cadcb"
+    },
+    "name": "donation",
+    "tags": ["blood", "plasma", "organ"]
+  },
+  {
+    "_id": {
+      "$oid": "608307d7efc44f2f9c2cadcc"
+    },
+    "name": "fundRaiser",
+    "tags": []
+  },
+  {
+    "_id": {
+      "$oid": "608307d7efc44f2f9c2cadcd"
+    },
+    "name": "recommendations",
+    "tags": ["hospital", "doctor"]
+  }
+]
