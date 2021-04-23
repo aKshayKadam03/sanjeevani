@@ -7,11 +7,14 @@ import { GrInstagram } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
 import dynamic from "next/dynamic";
+import axios from "axios";
 
 const Users = dynamic(() => import("./seeks"));
 const Hosts = dynamic(() => import("./hosting"));
 
-function navbar() {
+function navbar({ req }) {
+  console.log(req);
+
   let [show, setShow] = useState(true);
   return (
     <div>

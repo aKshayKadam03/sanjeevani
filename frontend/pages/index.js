@@ -1,12 +1,21 @@
 import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 import navbar from "../Components/navbar";
-
 import dynamic from "next/dynamic";
+import axios from "axios";
 
 const GoodbyeDynamic = dynamic(() => import("../Components/navbar"));
 
-export default function Home() {
+export async function getServerSideProps() {
+  let res = await axios.get("http://localhost:8080/host");
+  const data = await res.data;
+
+  return {
+    props: { req: data },
+  };
+}
+
+export default function Home({ req }) {
   return (
     // <div className={styles.container}>
     //   <Head>
@@ -67,7 +76,7 @@ export default function Home() {
     //   </footer>
     // </div>
     <div>
-      <GoodbyeDynamic />
+      <GoodbyeDynamic req={req} />
     </div>
   );
 }
