@@ -1,26 +1,87 @@
 [
   {
     "title": "NATURE REPUBLIC CO., LTD.",
-    "details": "Centralized impactful firmware"
+    "details": "Centralized impactful firmware",
+    "userId": "60830325efc44f2f9c2cadc4",
+    "category": "608307d7efc44f2f9c2cadc9",
+    "tag" : "food",
+    "city": "mumbai",
+    "location" : {
+           "type" : "Point",
+          "coordinates" : [72.877426 , 19.076090]
+      },
+      "claimed": false
   },
   {
     "title": "Rebel Distributors Corp",
-    "details": "Multi-tiered encompassing Graphical User Interface"
+    "details": "Multi-tiered encompassing Graphical User Interface" , 
+     "userId": "60830325efc44f2f9c2cadc5",
+     "category": "608307d7efc44f2f9c2cadca",
+     "tag" : "masks",
+     "city": "pakur",
+     "location" : {
+            "type" : "Point",
+           "coordinates" : [87.849251 , 24.633568]
+       }
+       ,
+      "claimed": false
   },
   {
     "title": "Teva Pharmaceuticals USA Inc",
-    "details": "Secured 24 hour function"
+    "details": "Secured 24 hour function",
+    "userId": "60830325efc44f2f9c2cadc6",
+    "category": "608307d7efc44f2f9c2cadcb",
+    "tag" : "blood",
+    "city": "surendranagar",
+     "location" : {
+            "type" : "Point",
+           "coordinates" : [71.637077 , 22.728392]
+       }
+       ,
+      "claimed": false
   },
   {
     "title": "ALK-Abello, Inc.",
     "details": "Reduced attitude-oriented standardization"
+    , "userId": "60830325efc44f2f9c2cadc7",
+    "category": "608307d7efc44f2f9c2cadcb",
+    "tag" : "blood",
+    "city": "thiruvalla",
+     "location" : {
+            "type" : "Point",
+           "coordinates" : [76.574059 , 9.383452]
+       }
+       ,
+      "claimed": false
   },
   {
     "title": "Akorn, Inc.",
-    "details": "Persevering actuating success"
+    "details": "Persevering actuating success",
+      "userId": "60830325efc44f2f9c2cadc8",
+      "category": "608307d7efc44f2f9c2cadcc",
+      "funds" : 55000,
+      "fundsRaised" : 1000,
+      "city": "chatrapur",
+      "location" : {
+             "type" : "Point",
+            "coordinates" : [84.986732 , 19.354979]
+        }
+        ,
+      "claimed": false
+      
   },
   {
     "title": "Cardinal Health",
     "details": "Compatible analyzing budgetary management"
+    , "userId": "60830325efc44f2f9c2cadc8",
+    "category": "608307d7efc44f2f9c2cadca",
+    "tag" : "oxygen-cylinders",
+    "city": "suri",
+    "location" : {
+           "type" : "Point",
+          "coordinates" : [87.524620 , 23.905445]
+      }
+      ,
+      "claimed": false
   }
 ]

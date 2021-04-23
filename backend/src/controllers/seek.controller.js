@@ -3,12 +3,20 @@ const router = express.Router();
 const Seek = require("../models/seek.model");
 
 router.get("/", async (req, res) => {
-  const seek = await Seek.find({}).lean().exec();
+  const seek = await Seek.find({})
+    .populate("userId")
+    .populate("category")
+    .lean()
+    .exec();
   return res.status(200).json({ data: seek });
 });
 
 router.get("/:id", async (req, res) => {
-  const seek = await Seek.findById(req.params.id).lean().exec();
+  const seek = await Seek.findById(req.params.id)
+    .populate("userId")
+    .populate("category")
+    .lean()
+    .exec();
   return res.status(200).json({ data: seek });
 });
 

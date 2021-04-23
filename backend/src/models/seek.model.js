@@ -7,6 +7,7 @@ const seekSchema = new mongoose.Schema(
     title: { type: String, required: true },
     details: { type: String, required: true },
     category: { type: String, required: true },
+    tag: { type: String },
     city: { type: String, required: true },
     location: {
       type: {

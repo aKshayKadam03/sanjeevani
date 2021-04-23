@@ -8,6 +8,7 @@ const hostSchema = new mongoose.Schema(
     details: { type: String, required: true },
     category: { type: String, required: true },
     city: { type: String, required: true },
+    tag: { type: String },
     location: {
       type: {
         type: String,

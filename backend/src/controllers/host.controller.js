@@ -3,12 +3,20 @@ const router = express.Router();
 const Host = require("../models/host.model");
 
 router.get("/", async (req, res) => {
-  const host = await Host.find({}).populate("userId").lean().exec();
+  const host = await Host.find({})
+    .populate("userId")
+    .populate("category")
+    .lean()
+    .exec();
   return res.status(200).json({ data: host });
 });
 
 router.get("/:id", async (req, res) => {
-  const host = await Host.findById(req.params.id).lean().exec();
+  const host = await Host.findById(req.params.id)
+    .populate("userId")
+    .populate("category")
+    .lean()
+    .exec();
   return res.status(200).json({ data: host });
 });
 
