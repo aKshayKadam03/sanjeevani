@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Host = require("../models/host.model");
+const Categories = require("../models/category.model");
 
 router.get("/", async (req, res) => {
+  let categories = await Categories.find({}).lean().exec();
+
   const host = await Host.find({})
     .populate("userId")
     .populate("category")

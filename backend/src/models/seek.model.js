@@ -6,7 +6,6 @@ const seekSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     details: { type: String, required: true },
-    category: { type: String, required: true },
     tag: { type: String },
     city: { type: String, required: true },
     location: {
@@ -21,9 +20,14 @@ const seekSchema = new mongoose.Schema(
         required: true,
       },
     },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "categories",
+      required: true,
+    },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      rel: "users",
+      ref: "users",
       required: true,
     },
     funds: { type: Number },
