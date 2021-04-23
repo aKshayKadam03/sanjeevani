@@ -7,15 +7,17 @@ import axios from "axios";
 const GoodbyeDynamic = dynamic(() => import("../Components/navbar"));
 
 export async function getServerSideProps() {
+  let res1 = await axios.get("http://localhost:8080/seek");
+  const data1 = await res1.data;
   let res = await axios.get("http://localhost:8080/host");
   const data = await res.data;
 
   return {
-    props: { req: data },
+    props: { req: data, seek: data1 },
   };
 }
 
-export default function Home({ req }) {
+export default function Home({ req, seek }) {
   return (
     // <div className={styles.container}>
     //   <Head>
@@ -76,7 +78,7 @@ export default function Home({ req }) {
     //   </footer>
     // </div>
     <div>
-      <GoodbyeDynamic req={req} />
+      <GoodbyeDynamic req={req} seek={seek} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
 
-function users() {
+function users({ cards }) {
   const [users, setUsers] = useState([]);
 
   const fetcher = (url) => {
@@ -13,8 +13,10 @@ function users() {
   };
 
   useSwr("http://localhost:8080/seek", fetcher);
-  let k = users[0];
-  console.log(k);
+  // let k = users[0];
+  // console.log(k, "k");
+  // console.log(cards.data, "cards");
+  let k = cards;
   return (
     <div>
       {k?.map((i) => (

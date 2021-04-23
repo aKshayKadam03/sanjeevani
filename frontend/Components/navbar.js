@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/navbar.module.css";
 import Link from "next/link";
@@ -12,10 +12,21 @@ import axios from "axios";
 const Users = dynamic(() => import("./seeks"));
 const Hosts = dynamic(() => import("./hosting"));
 
-function navbar({ req }) {
-  console.log(req);
-
+function navbar({ req, seek }) {
   let [show, setShow] = useState(true);
+  let del = req.data.filter((i) => i.category.name === "delivery"); //host
+  let med = req.data.filter((i) => i.category.name === "medical"); //host
+  let donate = req.data.filter((i) => i.category.name === "donation"); //host
+
+  //seek
+  let del1 = seek.data.filter((i) => i.category.name === "delivery"); //seek
+  let med1 = seek.data.filter((i) => i.category.name === "medical"); //seek
+  let donate1 = seek.data.filter((i) => i.category.name === "donation"); //seek
+
+  let [cards, setCards] = useState(req.data);
+
+  useEffect(() => {}, [cards]);
+
   return (
     <div>
       <div className={styles.container}>
@@ -45,25 +56,53 @@ function navbar({ req }) {
       <div className={styles.flex}>
         {/* filters bar */}
         <div className={styles.filters}>
-          <h3>Filters</h3>
+          <h3>Filters for Seeking</h3>
           <div>
-            <input type="checkbox" name="filter1" />
-            <label htmlFor="filter1">Trending</label>
-            <br />
-            <input type="checkbox" name="filter2" />
-            <label htmlFor="filter2">Important</label>
-            <br />
-            <input type="checkbox" name="filter3" />
-            <label htmlFor="filter3">COVID Essentials</label>
-            <br />
-            <input type="checkbox" name="filter4" />
+            <input
+              type="checkbox"
+              name="filter4"
+              onChange={() => setCards(donate)}
+            />
             <label htmlFor="filter4">Financial Help</label>
             <br />
-            <input type="checkbox" name="filter5" />
+            <input
+              type="checkbox"
+              name="filter5"
+              onChange={() => setCards(del)}
+            />
             <label htmlFor="filter5">Delivering Essentials</label>
             <br />
-            <input type="checkbox" name="filter6" />
+            <input
+              type="checkbox"
+              name="filter6"
+              onChange={() => setCards(med)}
+            />
             <label htmlFor="filter6">Medicines</label>
+            <br />
+          </div>
+
+          <h3>Filters for Hosting</h3>
+          <div>
+            <input
+              type="checkbox"
+              name="fil1"
+              onChange={() => setCards(donate1)}
+            />
+            <label htmlFor="fil1">Financial Help</label>
+            <br />
+            <input
+              type="checkbox"
+              name="fil2"
+              onChange={() => setCards(del1)}
+            />
+            <label htmlFor="fil2">Delivering Essentials</label>
+            <br />
+            <input
+              type="checkbox"
+              name="fil3"
+              onChange={() => setCards(med1)}
+            />
+            <label htmlFor="fil3">Medicines</label>
             <br />
           </div>
         </div>
@@ -72,14 +111,20 @@ function navbar({ req }) {
 
         <div className={styles.cards}>
           <div style={{ display: "flex", margin: "2% 35%" }}>
-            <button style={{ margin: "0% 5%" }} onClick={() => setShow(false)}>
+            <button
+              style={{ margin: "0% 5%" }}
+              onClick={() => setCards(req.data)}
+            >
               Seeking
             </button>
-            <button onClick={() => setShow(true)} style={{ margin: "0% 5%" }}>
+            <button
+              onClick={() => setCards(seek.data)}
+              style={{ margin: "0% 5%" }}
+            >
               Hosting
             </button>
           </div>
-          {show ? <Users /> : <Hosts />}
+          <Users cards={cards} />
         </div>
       </div>
     </div>
