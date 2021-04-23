@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  margin: 1% 5%;
+  justify-content: space-between;
+}
+
+.navinfo {
+  display: flex;
+  margin-left: 35%;
+  width: 48%;
+  align-items: center;
+}
+
+.navimg {
+  display: flex;
+}
+
+.navinfo > a {
+  margin: 0 2.5%;
+}
+
+.donate {
+  color: rgb(1, 192, 192);
+  width: 140px;
+  height: 40px;
+  font-size: larger;
+  font-weight: 600;
+  margin-left: 1%;
+  border-radius: 10px;
+}
+
+.donate:hover {
+  cursor: pointer;
+  text-shadow: 2px 2px #53b40375;
+}
+
+.icon {
+  margin: 0 1%;
+  font-size: 1.5em;
+}
+
+.logo {
+  margin: 18% 2% 0 0;
+  font-size: 1.5em;
+}
+
+/* Hero CSS */
+
+.hero {
+  margin: 2% auto;
+  height: 100px;
+  width: 80%;
+  border: 1px solid black;
+}
+
+/* Dashboard && filters */
+
+.flex {
+  display: flex;
+  max-width: 100%;
+  margin: 1% 5%;
+}
+
+.filters {
+  width: 16%;
+  border-right: 1px solid black;
+  height: 100vh;
+}
+
+/* Cards in dashboard */
+
+.cards {
+  width: 75%;
+  margin: 2% 2% 0 4%;
+  display: flex;
+  justify-content: center;
+}
+
+.cards > h2 {
+  margin: 1% 5%;
+}
