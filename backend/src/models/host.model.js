@@ -6,7 +6,7 @@ const hostSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     details: { type: String, required: true },
-    category: { type: String, required: true },
+
     city: { type: String, required: true },
     tag: { type: String },
     location: {
@@ -20,6 +20,11 @@ const hostSchema = new mongoose.Schema(
         index: "2dsphere",
         required: true,
       },
+    },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "categories",
+      required: true,
     },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
