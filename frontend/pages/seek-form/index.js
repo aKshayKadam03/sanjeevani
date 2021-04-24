@@ -1,30 +1,47 @@
 import axios from "axios";
 import React from "react";
 import styles from "./seek-form.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initState = {
   title: "",
   details: "",
-  category: "",
+  category: "608307d7efc44f2f9c2cadca",
   city: "",
 };
 
 function index() {
   const [formData, setFormData] = React.useState(initState);
-
+  const [currentUser, setCurrentUser] = React.useState({});
   function onChangeHandler(e) {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   }
+  const majorCity = () => toast.error("Please choose a nearby major city");
+  const success = () => toast.success("Posted Successfully");
+  const error = () => toast.error("Something went wrong");
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
+    }
+  }, []);
 
   async function onSubmitHandler(e) {
     e.preventDefault();
     let { title, details, category, city } = formData;
-    let response = await axios.get(`https://geocode.xyz/${city}?json=1`);
+    let response;
+    try {
+      response = await axios.get(`https://geocode.xyz/${city}?json=1`);
+    } catch (err) {
+      return majorCity();
+    }
+
     let { longt, latt } = response.data;
+
     let payload = {
       title,
-      userId: "60830325efc44f2f9c2cadbd",
+      userId: currentUser?._id || "60830325efc44f2f9c2cadbd",
       category,
       details,
       city,
@@ -36,8 +53,11 @@ function index() {
     };
     axios
       .post("http://localhost:8080/seek/", payload)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        success();
+        setFormData(initState);
+      })
+      .catch((err) => error());
   }
 
   const { title, details, category, city } = formData;
@@ -51,7 +71,7 @@ function index() {
       </div>
       <div onSubmit={onSubmitHandler} className={styles.form}>
         <h3>Need help? fill out the form below</h3>
-        <form>
+        <form className={styles.mainForm}>
           <div>
             <input
               onChange={onChangeHandler}
@@ -71,11 +91,10 @@ function index() {
             />
           </div>
           <div>
-            <select onChange={onChangeHandler} name="category" value={category}>
+            <select onChange={onChangeHandler} name="category">
               <option value="608307d7efc44f2f9c2cadca">Medical</option>
               <option value="608307d7efc44f2f9c2cadcd">Recommendations</option>
               <option value="608307d7efc44f2f9c2cadcc">Fund Raiser</option>
-              <option value="608307d7efc44f2f9c2cadca">Medical</option>
               <option value="608307d7efc44f2f9c2cadc9">Delivery</option>
               <option value="608307d7efc44f2f9c2cadcb">Donation</option>
             </select>
@@ -90,9 +109,10 @@ function index() {
             ></input>
           </div>
           <div>
-            <button>Submit</button>
+            <button className={styles.submit}>Submit</button>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );

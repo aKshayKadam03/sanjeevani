@@ -5,26 +5,52 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { handleLogOut } from "../redux/Auth/actions";
 
 function Navbar() {
   let a = useSelector((state) => state.auth.currentUser); //this is object of current User
+  let isAuth = useSelector((state) => state.auth.isAuth);
+  let dispatch = useDispatch();
+  const onLogOutHandler = () => {
+    dispatch(handleLogOut());
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem("currentUser");
+    }
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.navimg}>
-        {/* <AiFillThunderbolt className={styles.logo} /> */}
-        <img width="110px" src="./images/logo.png" alt="logo"></img>
+        <Link href="/">
+          <img width="110px" src="./images/logo.png" alt="logo"></img>
+        </Link>
       </div>
       <div className={styles.navinfo}>
-        <Link href="/">About us</Link>
-        <Link href="/">Contact us</Link>
-        <Link href="/">Contribute</Link>
+        <Link href="/map">Map</Link>
+        <Link href="/seek-form">Seek </Link>
+        <Link href="/host-form">Provide </Link>
         <FaFacebookSquare className={styles.icon} />
         <GrInstagram className={styles.icon} />
         <FaTwitter className={styles.icon} />
-        <button className={styles.signin}>Sign In</button>
-        <button className={styles.signup}>Sign Up</button>
+
+        {!isAuth ? (
+          <>
+            <Link href="/signin">
+              <button className={styles.signin}>Sign In</button>
+            </Link>
+            <Link href="/signup">
+              <button className={styles.signup}>Sign Up</button>
+            </Link>
+          </>
+        ) : (
+          <Link href="/">
+            <button onClick={onLogOutHandler} className={styles.signup}>
+              Logout
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
