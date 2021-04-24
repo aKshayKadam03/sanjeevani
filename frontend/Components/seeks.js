@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 function seeks({ cards }) {
   const [users, setUsers] = useState([]);
+  const router = useRouter();
   let k = cards;
   return (
     <div>
@@ -24,7 +25,14 @@ function seeks({ cards }) {
             </div>
           </div>
           <div></div>
-          <button className={styles.btn}>Pledge</button>
+          <button
+            className={styles.btn}
+            onClick={() => {
+              router.push(`/seekcard/${i._id}`);
+            }}
+          >
+            Pledge
+          </button>
         </div>
       ))}
     </div>
