@@ -6,7 +6,7 @@ import { GrInstagram } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
 
-function filter() {
+function Navbar() {
   return (
     <div className={styles.container}>
       <div className={styles.navimg}>
@@ -26,4 +26,4 @@ function filter() {
   );
 }
 
-export default filter;
+export default Navbar;

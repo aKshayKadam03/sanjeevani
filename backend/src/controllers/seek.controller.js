@@ -13,6 +13,8 @@ router.get("/", async (req, res) => {
   return res.status(200).json({ data: seek });
 });
 
+
+
 router.get("/:id", async (req, res) => {
   const seek = await Seek.findById(req.params.id)
     .populate("userId")

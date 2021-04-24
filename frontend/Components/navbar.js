@@ -45,9 +45,6 @@ function navbar({ req, seek }) {
         </div>
       </div>
 
-
-      
-
       {/* Filter && cards   */}
 
       <div className={styles.flex}>
