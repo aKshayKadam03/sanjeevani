@@ -1,6 +1,17 @@
 import { useRouter } from "next/router";
 import styles from "./card.module.css";
 import Discussion from "../../Components/discussion/discussion";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from "react-share";
+import { useEffect, useState } from "react";
 
 export const getServerSideProps = async () => {
   const res = await fetch("http://localhost:8080/user");
@@ -25,6 +36,13 @@ const seekcard = (props) => {
   const seek = props.seeks.data.filter((user) => user._id == id);
   const comments = props.comments.data;
   console.log(seek, comments);
+
+  const [link, setLink] = useState("");
+
+  useEffect(() => {
+    setLink(window.location.href);
+  }, []);
+  // console.log(window);
   return (
     <div className={styles.card}>
       <div className={styles.userDetails}>
@@ -48,16 +66,28 @@ const seekcard = (props) => {
             please contact with me on my email {seek[0].userId.email} or call{" "}
             {seek[0].userId.phone}
           </h4>
+
           <div>
-            <button>
+            <a>
               Chat <i class="fas fa-comments"></i>
-            </button>
-            <button>
+            </a>
+            <a href={`mailto:${seek[0].userId.email}`}>
               Email <i class="far fa-envelope"></i>
-            </button>
-            <button>
+            </a>
+            <a href={`tel:${seek[0].userId.phone}`}>
               Call <i class="fas fa-phone-alt"></i>
-            </button>
+            </a>
+            <div>
+              <FacebookShareButton url={link}>
+                <FacebookIcon size={"2rem"} round={true} />
+              </FacebookShareButton>
+              <TwitterShareButton url={link}>
+                <TwitterIcon size={"2rem"} round={true} />
+              </TwitterShareButton>
+              <WhatsappShareButton url={link}>
+                <WhatsappIcon size={"2rem"} round={true} />
+              </WhatsappShareButton>
+            </div>
           </div>
         </div>
       </div>
