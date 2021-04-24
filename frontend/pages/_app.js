@@ -1,4 +1,3 @@
-import { AppWrapper } from "../Context/UserContext";
 import "../styles/globals.css";
 import App from "next/app";
 import React from "react";
@@ -15,10 +14,6 @@ class MyApp extends App {
         <Navbar1 />
         <Component {...pageProps}></Component>
       </Provider>
-
-      //    <AppWrapper>
-      //   <Component {...pageProps} />;
-      // </AppWrapper>
     );
   }
 }
