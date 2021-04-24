@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/navbar.module.css";
 import navbar from "./navbar";
-
+import { useRouter } from "next/router";
 function hosts({ cards }) {
   let k = cards;
-
+  const router = useRouter();
   return (
     <div>
       {k?.map((i) => (
@@ -34,7 +33,12 @@ function hosts({ cards }) {
               </div>
             </div>
           </div>
-          <button className={styles.PledgeButton}>
+          <button
+            className={styles.PledgeButton}
+            onClick={() => {
+              router.push(`/hostcard/${i._id}`);
+            }}
+          >
             <i className="fas fa-hands"></i> Pledge
           </button>
         </div>
