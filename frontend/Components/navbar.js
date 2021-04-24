@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../styles/navbar.module.css";
 import Link from "next/link";
@@ -6,8 +6,16 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
+import dynamic from "next/dynamic";
+import axios from "axios";
 
-function navbar() {
+const Seeks = dynamic(() => import("./seeks"));
+const Hosts = dynamic(() => import("./hosting"));
+
+function navbar({ req }) {
+  console.log(req);
+
+  let [show, setShow] = useState(true);
   return (
     <div>
       <div className={styles.container}>
@@ -63,12 +71,15 @@ function navbar() {
         {/* Cards Section */}
 
         <div className={styles.cards}>
-          <h2>
-            <Link href="/">Seeking</Link>
-          </h2>
-          <h2>
-            <Link href="/">Hosting</Link>
-          </h2>
+          <div style={{ display: "flex", margin: "2% 35%" }}>
+            <button style={{ margin: "0% 5%" }} onClick={() => setShow(false)}>
+              Seeking
+            </button>
+            <button onClick={() => setShow(true)} style={{ margin: "0% 5%" }}>
+              Hosting
+            </button>
+          </div>
+          {!show ? <Seeks /> : <Hosts />}
         </div>
       </div>
     </div>

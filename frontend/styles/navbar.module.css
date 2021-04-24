@@ -6,7 +6,6 @@
 
 .navinfo {
   display: flex;
-  margin-left: 35%;
   width: 55%;
   align-items: center;
 }
@@ -70,12 +69,19 @@
 /* Cards in dashboard */
 
 .cards {
-  width: 75%;
-  margin: 2% 2% 0 4%;
-  display: flex;
-  justify-content: center;
+  width: 90%;
+  margin: 2% 0% 0 0%;
+  /* display: flex; */
 }
 
 .cards > h2 {
   margin: 1% 5%;
+}
+
+.cards > div button {
+  width: 100px;
+  height: 35px;
+  background-color: white;
+  color: teal;
+  font-size: large;
 }
