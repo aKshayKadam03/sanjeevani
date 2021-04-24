@@ -25,6 +25,15 @@ const getUsersFailure = (error) => {
   };
 };
 
+const getCurrent = (data) => {
+  return {
+    type: actionTypes.GET_CURRENT_USER,
+    payload: {
+      data,
+    },
+  };
+};
+
 export const getUsers = () => async (dispatch) => {
   dispatch(getUsersRequest());
   return axios
@@ -36,4 +45,8 @@ export const getUsers = () => async (dispatch) => {
     .catch((error) => {
       dispatch(getUsersFailure(error));
     });
+};
+
+export const getCurrentUser = (i) => (dispatch) => {
+  dispatch(getCurrent(i));
 };

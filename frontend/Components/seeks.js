@@ -1,30 +1,41 @@
 import React, { useState } from "react";
 import useSwr from "swr";
 import axios from "axios";
-import styles from "../styles/users.module.css";
-import { useRouter } from "next/router";
+import styles from "../styles/navbar.module.css";
 
 function seeks({ cards }) {
-  const [users, setUsers] = useState([]);
   let k = cards;
   return (
     <div>
       {k?.map((i) => (
-        <div className={styles.card} key={i._id}>
-          <div style={{ display: "flex" }}>
+        <div className={styles.SeekCard} key={i._id}>
+          <div>
+            <img src={i.userId.img} alt="hi" />
+          </div>
+          <div className={styles.SeekCardDetails}>
             <div>
-              <img src={i.userId.img} alt="hi" />
+              <h4>
+                <button className={styles.NeedButton}>Need</button> {i.title}
+              </h4>
             </div>
-            <div style={{ marginLeft: "5%", width: "60%" }}>
-              <h3>
-                Name - {i.userId.firstName} {i.userId.lastName}
-              </h3>
-              <h3>Seeking title - {i.title}</h3>
-              <h4>City - {i.city}</h4>
+            <div>
+              <p>{i.details}</p>
+            </div>
+            <div>
+              <div>
+                <h4>
+                  {i.userId.firstName} {i.userId.lastName}
+                </h4>
+              </div>
+              <div>
+                <h4>Location : {i.city}</h4>
+              </div>
             </div>
           </div>
-          <div></div>
-          <button className={styles.btn}>Pledge</button>
+
+          <button className={styles.PledgeButton}>
+            <i className="fas fa-hands"></i> Pledge
+          </button>
         </div>
       ))}
     </div>
