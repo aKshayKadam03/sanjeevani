@@ -35,8 +35,8 @@
   padding: 2px 12px;
   border-radius: 5px;
   outline: none;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   color: white;
   background-color: rgb(77, 165, 224);
   border: 1px solid rgb(77, 165, 224);
@@ -62,7 +62,6 @@
 /* Hero CSS */
 
 .Hero {
-  border: 1px solid black;
   height: 50vh;
 }
 
@@ -115,58 +114,140 @@
   display: flex;
   width: 100%;
   max-width: 1200px;
-  border: 1px solid black;
   margin: 0 auto;
   min-height: 100vh;
 }
 
 .filters {
-  width: 15%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(216, 218, 216);
 }
+
+.filterSection {
+  padding: 15px;
+  /* border-bottom: 1px solid rgb(216, 218, 216); */
+  border-right: 1px solid rgb(216, 218, 216);
+  border-bottom: 1px solid rgb(216, 218, 216);
+}
+
+.filterSectionHead {
+}
+
+.filterSectionContent {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.filterSectionContent input {
+  margin: 5px 15px;
+}
+
+.filterSectionContent label {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
 .display {
   width: 75%;
 }
 
 .toggleTab {
-  max-width: 500px;
+  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
+  margin: 80px auto 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .tabButton {
+  transition: all 600ms ease;
   width: 100%;
   border: none;
   border-radius: 2px;
-  padding: 20px 25px;
+  padding: 15px 20px;
+  font-size: 16px;
   font-weight: 600;
   background-color: #4da5e0;
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
 }
 
-.cards {
-  border: 1px solid red;
-}
-
-/* Cards in dashboard */
-/* 
-.cards {
-  width: 90%;
-  margin: 2% 0% 0 0%;
+.Cards {
   display: flex;
+  flex-direction: column;
 }
 
-.cards > h2 {
-  margin: 1% 5%;
+/*Seeking  Cards in dashboard */
+.SeekCard {
+  border: 1px solid rgb(216, 218, 216);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px 10px 10px;
+  transition: all 500ms ease;
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+}
+.SeekCard:hover {
+  background-color: rgb(232, 238, 238);
+  transform: scale(1.01);
 }
 
-.cards > div button {
-  width: 100px;
-  height: 35px;
-  background-color: white;
-  color: teal;
-  font-size: large;
-} */
+.SeekCard > div:nth-child(1) {
+  width: 20%;
+  border-radius: 50%;
+}
+.SeekCard > div:nth-child(1) img {
+  border-radius: 50%;
+}
+
+.SeekCard > div:nth-child(2) {
+  width: 70%;
+}
+.SeekCard > div:nth-child(3) {
+  width: 10%;
+  min-width: 85px;
+}
+
+.SeekCardDetails > div:nth-child(3) {
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.PledgeButton {
+  background-color: rgba(231, 41, 16, 0.9);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.HaveButton {
+  background-color: rgb(7, 153, 14);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.NeedButton {
+  background-color: rgb(18, 99, 136);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: 500;
+}

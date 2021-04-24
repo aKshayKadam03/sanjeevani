@@ -10,6 +10,14 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import dynamic from "next/dynamic";
 import useSwr from "swr";
 import axios from "axios";
+import map from "../public/images/map.json";
+import Lottie from "react-lottie";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: map,
+};
 
 import Hero from "./hero";
 
@@ -35,13 +43,20 @@ let initState = {
 function navbar({ req, seek }) {
   let [seeks, setSeeks] = useState([]);
   let [hosts, setHosts] = useState([]);
-  let [cards, setCards] = useState(req.data);
   let [categoryArray, setCategoryArray] = useState(initState);
   let [active, setActive] = useState("seeks");
 
   const onChangeHandler = (e) => {
     const { name, checked } = e.target;
     setCategoryArray({ ...categoryArray, [name]: checked });
+  };
+
+  const clearCheckBox = () => {
+    let inputs = document.querySelectorAll("input");
+
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].checked = false;
+    }
   };
 
   useEffect(() => {
@@ -65,6 +80,7 @@ function navbar({ req, seek }) {
     } else {
       setActive("seeks");
     }
+    clearCheckBox();
     setCategoryArray(initState);
   }
 
@@ -93,52 +109,84 @@ function navbar({ req, seek }) {
       </div>
 
       {/* Filter && cards   */}
+      <div>
+        <div className={styles.toggleTab}>
+          <button
+            style={{
+              backgroundColor: active === "hosts" ? "white" : "#4DA5E0",
+              borderColor: active === "hosts" ? "#4DA5E0" : "white",
+              color: active === "hosts" ? "#4DA5E0" : "white",
+            }}
+            className={styles.tabButton}
+            onClick={() => tabToggle(2)}
+          >
+            Seeking Help
+          </button>
+          <button
+            style={{
+              backgroundColor: active === "seeks" ? "white" : "#4DA5E0",
+              borderColor: active === "seeks" ? "#4DA5E0" : "white",
+              color: active === "seeks" ? "#4DA5E0" : "white",
+            }}
+            className={styles.tabButton}
+            onClick={() => tabToggle(1)}
+          >
+            Providing Help
+          </button>
+        </div>
+      </div>
 
       <div className={styles.MainSection}>
         {/* filters bar */}
+
         <div className={styles.filters}>
-          {categories?.map((item) => (
-            <div key={Object.values(item)[0]}>
-              <label>
-                <input
-                  onChange={onChangeHandler}
-                  name={Object.values(item)[0]}
-                  type="checkbox"
-                />
-                {Object.keys(item)[0]}
-              </label>
+          <div className={styles.filterSection}>
+            <div className={styles.filterSectionHead}>
+              <h2>Filters</h2>
             </div>
-          ))}
+            <div className={styles.filterSectionContent}>
+              {categories?.map((item) => (
+                <div key={Object.values(item)[0]}>
+                  <label>
+                    <input
+                      className="input"
+                      onChange={onChangeHandler}
+                      name={Object.values(item)[0]}
+                      type="checkbox"
+                    />
+                    {Object.keys(item)[0]}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.filterSection}>
+            <div className={styles.filterSectionHead}>
+              <h2>Tags</h2>
+            </div>
+            <div className={styles.filterSectionContent}>
+              {categories?.map((item) => (
+                <button>{Object.keys(item)[0]}</button>
+              ))}
+            </div>
+          </div>
+          <div className={styles.filterSection}>
+            <div className={styles.filterSectionHead}>
+              <h2>Search By Map</h2>
+            </div>
+            <div className={styles.filterSectionContent}>
+              <div>
+                <Lottie options={defaultOptions} height={160} width={160} />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Cards Section */}
 
         <div className={styles.display}>
-          <div className={styles.toggleTab}>
-            <button
-              style={{
-                backgroundColor: active === "hosts" ? "white" : "#4DA5E0",
-                borderColor: active === "hosts" ? "#4DA5E0" : "white",
-                color: active === "hosts" ? "#4DA5E0" : "white",
-              }}
-              className={styles.tabButton}
-              onClick={() => tabToggle(2)}
-            >
-              Seeking Help
-            </button>
-            <button
-              style={{
-                backgroundColor: active === "seeks" ? "white" : "#4DA5E0",
-                borderColor: active === "seeks" ? "#4DA5E0" : "white",
-                color: active === "seeks" ? "#4DA5E0" : "white",
-              }}
-              className={styles.tabButton}
-              onClick={() => tabToggle(1)}
-            >
-              Providing Help
-            </button>
-          </div>
-          <div className={styles.cards}>
+          <div className={styles.Cards}>
             {active === "seeks" ? (
               <Seeks cards={seeks} />
             ) : (
