@@ -45,11 +45,8 @@ function navbar({ req, seek }) {
         </div>
       </div>
 
-      {/* hero building */}
 
-      <div className={styles.hero}>
-        <h4>Important topics</h4>
-      </div>
+      
 
       {/* Filter && cards   */}
 

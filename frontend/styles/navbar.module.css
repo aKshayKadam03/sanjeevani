@@ -1,21 +1,22 @@
 .container {
   display: flex;
-  margin: 1% 5%;
+  padding: 1% 5%;
   justify-content: space-between;
+  width: 100%;
 }
 
 .navinfo {
   display: flex;
-  width: 55%;
   align-items: center;
+  min-width: 45%;
 }
 
 .navimg {
   display: flex;
 }
 
-.navinfo > a {
-  margin: 0 2.5%;
+.navinfo > a {  
+  width: 20%;
 }
 
 .donate {
