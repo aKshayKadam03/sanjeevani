@@ -1,0 +1,80 @@
+.Wrapper {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.Map {
+  width: 100%;
+  height: 90vh;
+  margin: auto;
+}
+
+.popup {
+  position: absolute;
+  top: -100px;
+  text-align: center;
+}
+
+.buttonOne {
+  background-color: rgb(10, 199, 233);
+  border: none;
+  width: 150px;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
+
+.buttonTwo {
+  background-color: rgb(75, 221, 7);
+  border: none;
+  width: 150px;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
+
+.marker {
+}
+
+.mapInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto 0;
+}
+
+.mapInfo > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Legend {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.Legend h4 {
+  margin: 0;
+}
+
+.Legend img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.Legend p {
+  margin: 10px;
+}
+
+.Legend div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
