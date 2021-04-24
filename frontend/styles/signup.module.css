@@ -1,11 +1,14 @@
 .container {
-  color: rgb(0, 0, 0);
-  width: 45%;
-  margin: 2% auto;
-  height: auto;
+  width: 50%;
+  margin-top: 2%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  border: 1px solid rgb(77, 165, 224);
+  border-radius: 10px;
+  padding: 20px 0px;
 }
 
 .container h1 {
@@ -13,45 +16,29 @@
   font-weight: 680;
 }
 
-.container > p {
-  width: 100px;
-  margin: 2% 2%;
-}
-
-.container > div {
-  display: flex;
-  flex-direction: column;
-  max-width: 550px;
-  margin: 5% 0;
-}
-
 .container input {
   margin: 2% 0;
 }
 
-.container label {
-  font-size: large;
-}
-
 .container button {
   color: white;
-  background: rgb(178, 75, 233);
-  background: linear-gradient(
-    90deg,
-    rgba(178, 75, 233, 1) 44%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  width: 200px;
+  background-color: rgb(77, 165, 224);
+  width: 350px;
   height: 40px;
-  border-radius: 5px;
-  margin-top: 1%;
-  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 5%;
+  font-weight: 700;
   font-size: 18px;
+  border: none;
 }
 
 .container input {
-  width: 250px;
+  width: 350px;
   height: 40px;
+  margin: 2% 0;
+  border: none;
+  border-bottom: 2px solid rgb(77, 165, 224);
+  outline: none;
 }
 
 .wrong {
