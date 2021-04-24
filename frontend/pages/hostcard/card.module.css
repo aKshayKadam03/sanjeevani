@@ -49,7 +49,7 @@
   justify-content: flex-end;
   padding: 0 5%;
 }
-.userDetails__Right > div > button {
+.userDetails__Right > div > a {
   background-color: #212121;
   color: white;
   border: none;
@@ -58,14 +58,16 @@
   width: 100px;
   height: 40px;
   font-size: 15px;
+  padding-top: 6px;
+  text-align: center;
 }
-.userDetails__Right > div > button:nth-child(1) {
+.userDetails__Right > div > a:nth-child(1) {
   background-color: #25d366;
 }
-.userDetails__Right > div > button:nth-child(2) {
+.userDetails__Right > div > a:nth-child(2) {
   background-color: #db4437;
 }
-.userDetails__Right > div > button:nth-child(3) {
+.userDetails__Right > div > a:nth-child(3) {
   background-color: #4285f4;
 }
 .userDetails__Right > h1 {
