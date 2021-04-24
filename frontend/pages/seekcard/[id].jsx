@@ -2,12 +2,10 @@ import { useRouter } from "next/router";
 import styles from "./card.module.css";
 import Discussion from "../../Components/discussion/discussion";
 import {
-  EmailShareButton,
   FacebookShareButton,
   TwitterShareButton,
   WhatsappShareButton,
   FacebookIcon,
-  FacebookMessengerIcon,
   TwitterIcon,
   WhatsappIcon,
 } from "react-share";
