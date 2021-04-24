@@ -32,10 +32,11 @@ function seeks({ cards }) {
               </div>
             </div>
           </div>
-
-          <button className={styles.PledgeButton}>
-            <i className="fas fa-hands"></i> Pledge
-          </button>
+          <div>
+            <button className={styles.PledgeButton}>
+              <i className="fas fa-hands"></i> Pledge
+            </button>
+          </div>
         </div>
       ))}
     </div>

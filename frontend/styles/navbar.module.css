@@ -215,6 +215,8 @@
 .SeekCard > div:nth-child(3) {
   width: 10%;
   min-width: 85px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .SeekCardDetails > div:nth-child(3) {
