@@ -30,28 +30,49 @@
   border-bottom: 1px solid rgb(18, 22, 22);
 }
 
-.donate {
+.signup {
   margin: 0 15px;
-  padding: 2px 12px;
+  padding: 2px 15px;
   border-radius: 5px;
   outline: none;
   font-size: 16px;
   font-weight: 400;
   color: white;
-  background-color: rgb(77, 165, 224);
-  border: 1px solid rgb(77, 165, 224);
+  background-color: rgb(11, 140, 226);
+  border: 1px solid rgb(11, 140, 226);
   transition: all 500ms ease;
+  min-width: 90px;
 }
 
-.donate:hover {
+.signup:hover {
   cursor: pointer;
+}
+
+.signin {
+  margin: 0 15px;
+  padding: 2px 15px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
   background-color: white;
-  color: rgb(77, 165, 224);
+  color: rgb(11, 140, 226);
+  border: 1px solid rgb(11, 140, 226);
+  transition: all 500ms ease;
+  min-width: 90px;
+}
+
+.signin:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(11, 140, 226);
 }
 
 .icon {
   margin: 0 1%;
   font-size: 1.2em;
+  color: #373e42;
 }
 
 .logo {
@@ -171,7 +192,7 @@
   padding: 15px 20px;
   font-size: 16px;
   font-weight: 600;
-  background-color: #4da5e0;
+  background-color: rgb(11, 140, 226);
   color: white;
   border: 2px solid white;
   border-radius: 5px;
@@ -188,7 +209,7 @@
 .SeekCard {
   border: 1px solid rgb(216, 218, 216);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-evenly;
   margin: 0 10px 10px 10px;
   transition: all 500ms ease;
@@ -215,6 +236,9 @@
 .SeekCard > div:nth-child(3) {
   width: 10%;
   min-width: 85px;
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 5px;
 }
 
 .SeekCardDetails > div:nth-child(3) {

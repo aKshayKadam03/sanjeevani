@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import useSwr from "swr";
-import axios from "axios";
+
 import styles from "../styles/navbar.module.css";
 import { useRouter } from "next/router";
 function seeks({ cards }) {
   const [users, setUsers] = useState([]);
   const router = useRouter();
   let k = cards;
+
   return (
     <div>
       {k?.map((i) => (
@@ -34,15 +34,16 @@ function seeks({ cards }) {
               </div>
             </div>
           </div>
-
-          <button
-            className={styles.PledgeButton}
-            onClick={() => {
-              router.push(`/seekcard/${i._id}`);
-            }}
-          >
-            <i className="fas fa-hands"></i> Pledge
-          </button>
+          <div className={styles.SeekButtonDiv}>
+            <button
+              onClick={() => {
+                router.push(`/seekcard/${i._id}`);
+              }}
+              className={styles.PledgeButton}
+            >
+              <i className="fas fa-hands"></i> Pledge
+            </button>
+          </div>
         </div>
       ))}
     </div>

@@ -8,10 +8,13 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 const L = require("leaflet");
 import styles from "../styles/Map.module.css";
+import { useRouter } from "next/router";
 
 const Map = () => {
   const [seeks, setSeeks] = React.useState([]);
   const [hosts, setHosts] = React.useState([]);
+  const router = useRouter();
+  // let storage = localStorage.getItem()
 
   const fetcher = (url) => {
     axios.get(url).then((res) => {
@@ -57,7 +60,12 @@ const Map = () => {
             <Popup className={styles.popup} iconAnchor={[10, 40]}>
               <div>{item.title}</div>
               <div>
-                <button className={styles.buttonOne}>Ask for Help</button>
+                <button
+                  onClick={() => router.push(`/hostcard/${item._id}`)}
+                  className={styles.buttonOne}
+                >
+                  Ask for Help
+                </button>
               </div>
             </Popup>
           </Marker>
@@ -79,7 +87,12 @@ const Map = () => {
             <Popup className={styles.popup} iconAnchor={[10, 40]}>
               <div>{item.title}</div>
               <div>
-                <button className={styles.buttonTwo}>Provide Help</button>
+                <button
+                  onClick={() => router.push(`/seekcard/${item._id}`)}
+                  className={styles.buttonTwo}
+                >
+                  Provide Help
+                </button>
               </div>
             </Popup>
           </Marker>
