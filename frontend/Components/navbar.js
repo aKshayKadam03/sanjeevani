@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "../styles/navbar.module.css";
 import Link from "next/link";
@@ -40,11 +40,39 @@ let initState = {
   recommendations: false,
 };
 
-function navbar({ req, seek }) {
+function navbar() {
   let [seeks, setSeeks] = useState([]);
   let [hosts, setHosts] = useState([]);
+  let [tags, setTags] = useState([]);
   let [categoryArray, setCategoryArray] = useState(initState);
   let [active, setActive] = useState("seeks");
+  let status = useRef(false);
+  let persistentSeek = useRef([]);
+  let persistentHost = useRef([]);
+
+  const tagsCollector = () => {
+    let arr = {};
+    if (active === "seeks") {
+      for (let i = 0; i < seeks.length; i++) {
+        let temp = seeks[i].category.tags;
+        for (let j = 0; j < temp.length; j++) {
+          arr[temp[j]] = 0;
+        }
+      }
+    } else {
+      for (let i = 0; i < hosts.length; i++) {
+        let temp = hosts[i].category.tags;
+        for (let j = 0; j < temp.length; j++) {
+          arr[temp[j]] = 0;
+        }
+      }
+    }
+    setTags([...Object.keys(arr)]);
+  };
+
+  React.useEffect(() => {
+    tagsCollector();
+  }, [seeks, hosts]);
 
   const onChangeHandler = (e) => {
     const { name, checked } = e.target;
@@ -166,9 +194,11 @@ function navbar({ req, seek }) {
               <h2>Tags</h2>
             </div>
             <div className={styles.filterSectionContent}>
-              {categories?.map((item) => (
-                <button>{Object.keys(item)[0]}</button>
-              ))}
+              <div className={styles.allTags}>
+                {tags?.map((item) => (
+                  <button>{item}</button>
+                ))}
+              </div>
             </div>
           </div>
           <div className={styles.filterSection}>
@@ -176,9 +206,11 @@ function navbar({ req, seek }) {
               <h2>Search By Map</h2>
             </div>
             <div className={styles.filterSectionContent}>
-              <div>
-                <Lottie options={defaultOptions} height={160} width={160} />
-              </div>
+              <Link href="/map">
+                <div>
+                  <Lottie options={defaultOptions} height={160} width={160} />
+                </div>
+              </Link>
             </div>
           </div>
         </div>

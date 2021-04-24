@@ -232,6 +232,7 @@
   padding: 5px 10px;
   color: white;
   font-weight: 500;
+  min-width: 85px;
 }
 
 .HaveButton {
@@ -250,4 +251,21 @@
   padding: 5px 10px;
   color: white;
   font-weight: 500;
+}
+
+.allTags button {
+  border: none;
+  background-color: #373e42;
+  color: white;
+  padding: 2px 5px;
+  margin: 2px;
+  border-radius: 5px;
+  border: 1px solid white;
+  text-transform: capitalize;
+}
+
+.allTags button:hover {
+  border: 1px solid #373e42;
+  background-color: white;
+  color: #373e42;
 }
