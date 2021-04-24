@@ -24,10 +24,14 @@
     "react-leaflet": "^3.1.0",
     "react-lottie": "^1.2.3",
     "react-redux": "^7.2.3",
+    "react-strap": "^0.0.1",
+    "reactstrap": "^8.9.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "socket.io-client": "^4.0.1",
     "swr": "^0.5.5",
+    "username-generator": "^1.1.0",
     "victory": "^35.5.1",
     "yocto-queue": "^0.1.0"
   }
