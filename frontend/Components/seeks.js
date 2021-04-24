@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 import useSwr from "swr";
 import axios from "axios";
-<<<<<<< HEAD
 import styles from "../styles/navbar.module.css";
 
-function users({ cards }) {
-=======
-import styles from "../styles/users.module.css";
-import { useRouter } from "next/router";
-
 function seeks({ cards }) {
-  const [users, setUsers] = useState([]);
->>>>>>> f4314e9e58c9fa1398f678d35bba8a74c1cf49b8
   let k = cards;
   return (
     <div>
