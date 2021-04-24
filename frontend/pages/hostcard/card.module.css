@@ -1,17 +1,21 @@
 .card {
-  border: 1px solid #ccc;
-  min-height: 600px;
-  width: 80%;
+  width: 70%;
   margin: 5% auto;
   padding: 2%;
-  /* background-color: #80deea; */
+  background: #ffffff;
+  box-shadow: 14px 14px 28px #b0b0b0, -14px -14px 28px #ffffff;
+  border-radius: 20px;
+  background-image: url("https://svgshare.com/i/W_t.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
 }
 .userDetails {
   display: flex;
   justify-content: space-evenly;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #ffffff93;
+  background: #ffffff;
+  box-shadow: 5px 5px 24px #e0e0e0, -5px -5px 24px #ffffff;
 }
 
 .userDetails__Left {
@@ -22,7 +26,16 @@
   justify-content: center;
   align-items: center;
 }
+.userDetails__Left > img {
+  margin: 100px;
+  display: block;
 
+  border-radius: 100%;
+  background: #cca92c;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(255, 3, 3, 0.534);
+  animation: pulse 2s infinite;
+}
 .userDetails__Right {
   /* border: 1px solid red; */
   height: 250px;
@@ -40,8 +53,56 @@
   background-color: #212121;
   color: white;
   border: none;
+  margin-right: 10px;
   border-radius: 5px;
   width: 100px;
   height: 40px;
   font-size: 15px;
+}
+.userDetails__Right > div > button:nth-child(1) {
+  background-color: #25d366;
+}
+.userDetails__Right > div > button:nth-child(2) {
+  background-color: #db4437;
+}
+.userDetails__Right > div > button:nth-child(3) {
+  background-color: #4285f4;
+}
+.userDetails__Right > h1 {
+  color: coral;
+}
+.userDetails__Right > em {
+  font-size: 15px;
+  color: black;
+}
+
+.userDetails__Right > h4 {
+  font-size: 15px;
+  color: black;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.733);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0.555);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.39);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.63);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0.466);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0.692);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.507);
+  }
 }
