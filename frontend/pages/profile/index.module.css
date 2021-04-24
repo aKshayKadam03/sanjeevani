@@ -1,0 +1,114 @@
+.Profile {
+  border: 1px solid transparent;
+  height: 90vh;
+  background-image: url("https://svgshare.com/i/W__.svg");
+}
+.Profile__Center {
+  height: 500px;
+  width: 60%;
+  margin: 6vh auto;
+  background-color: rgba(245, 245, 245, 0.603);
+  border-radius: 5px;
+  display: flex;
+}
+.Profile__Center__Left {
+  background-color: rgba(245, 245, 245, 0.699);
+  border-radius: 10px;
+  width: 40%;
+  height: 90%;
+  margin: auto;
+}
+.Profile__Center__Right {
+  width: 55%;
+  background-color: rgba(245, 245, 245, 0.699);
+  border-radius: 10px;
+  height: 90%;
+  margin: auto;
+}
+.Profile__Center__Left__Top {
+  /* border: 1px solid red; */
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Profile__Center__Left__Top > img {
+  border-radius: 100%;
+}
+.Profile__Center__Left__Bottom {
+  height: 50%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.Profile__Center__Left__Bottom > h4 {
+  margin: 10px 0;
+}
+.Profile__Center__Left__Bottom > button {
+  height: 30px;
+  margin: 5px 0;
+  width: 80%;
+  border: none;
+  border-radius: 15px;
+}
+.Profile__Center__Left__Bottom > button:nth-child(4) {
+  background-color: #7fba00;
+  color: white;
+  transition: 0.5s;
+  font-size: 15px;
+  font-weight: bold;
+}
+.Profile__Center__Left__Bottom > button:nth-child(6) {
+  background-color: #00a4ef;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  color: white;
+}
+
+.Profile__Center__Left__Bottom > button:nth-child(8) {
+  background-color: #ffb900;
+  color: white;
+  font-weight: bold;
+  transition: 0.5s;
+  font-size: 15px;
+}
+.Profile__Center__Left__Bottom > button:hover {
+  transform: scale(0.95);
+  transition: 0.5s;
+}
+.Profile__Center__Right__Top {
+  height: 50px;
+  width: 60%;
+  margin: 20px auto;
+}
+.Profile__Center__Right__Top > button {
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid transparent;
+  font-size: 16px;
+  font-weight: bold;
+  color: #212121ce;
+  transition: 0.5s;
+}
+.Profile__Center__Right__Bottom {
+  border: 5px solid #212121b6;
+  border-radius: 50px;
+  width: 80%;
+  height: 340px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Tags {
+  border: none;
+  height: 30px;
+  background-color: #212121;
+  color: #ffffff;
+  border-radius: 15px;
+  width: 80px;
+}
