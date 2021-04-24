@@ -206,7 +206,7 @@ function navbar() {
           </div>
           <div className={styles.filterSection}>
             <div className={styles.filterSectionHead}>
-              <h2>Search By Map</h2>
+              <h2>View on Map</h2>
             </div>
             <div className={styles.filterSectionContent}>
               <Link href="/map">

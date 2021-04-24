@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "all-the-cities": "^3.1.0",
     "antd": "^4.15.2",
     "apexcharts": "^3.26.1",
     "axios": "^0.21.1",
@@ -24,6 +25,7 @@
     "react-leaflet": "^3.1.0",
     "react-lottie": "^1.2.3",
     "react-redux": "^7.2.3",
+    "react-toastify": "^7.0.4",
     "react-share": "^4.4.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
