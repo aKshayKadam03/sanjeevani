@@ -16,13 +16,6 @@
   font-weight: 680;
 }
 
-.container > div {
-  display: flex;
-  flex-direction: column;
-  max-width: 550px;
-  margin: 5% 0;
-}
-
 .container input {
   margin: 2% 0;
 }
@@ -52,23 +45,3 @@
   text-align: center;
   margin-top: 2%;
 }
-/* 
-.container > input[type="file"] {
-  display: none;
-}
-
-.container > input[type="file"] + label {
-  display: inline-block;
-  margin: 20px;
-  padding: 4px 32px;
-  background-color: #ffffff;
-  border: solid 1px #666f77;
-  border-radius: 6px;
-  color: #666f77;
-}
-
-.container > input[type="file"]:active + label {
-  background-image: none;
-  background-color: #2d6c7a;
-  color: #ffffff;
-} */
