@@ -4,44 +4,46 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import styles from "../styles/signin.module.css";
 import { AppWrapper, useAppContext } from "../Context/UserContext";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentUser, getUsers } from "../redux/Auth/actions";
 
 const Good = dynamic(() => import("../Components/navbar"));
 
 function signin() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  let [show, setShow] = useState();
+  let [show, setShow] = useState(false);
   let [wrong, setWrong] = useState(false);
 
-  let [global, setGlobalSet] = useState([]);
-
-  let glo = useAppContext(AppWrapper);
+  let dispatch = useDispatch();
 
   useEffect(() => {
     setShow(false);
+    dispatch(getUsers());
   }, []);
+
+  let a = useSelector((state) => state.auth.users.data);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:8080/user");
-      response.data.data.map((i) => {
+      a.data.map((i) => {
+        console.log(i);
         if (i.email === email && i.password === password) {
-          setGlobalSet(i);
-          glo = i;
+          dispatch(getCurrentUser(i));
           setShow(true);
         }
       });
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
+      setWrong(true);
     }
   };
-  //   console.log(global);
 
   return (
     <div className={styles.container}>
       <h1>Log In</h1>
-      
+
       {show && (
         <Link href="/">
           <button> Go to Dashboard</button>
@@ -51,10 +53,18 @@ function signin() {
 
       <form onSubmit={handleSubmit}>
         <h2>Email</h2>
-        <input type="text" onChange={(e) => setEmail(e.target.value)} />
+        <input
+          required
+          type="text"
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <br />
         <h2>Password</h2>
-        <input type="text" onChange={(e) => setPassword(e.target.value)} />
+        <input
+          required
+          type="text"
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <br />
         <button type="submit">Submit</button>
       </form>
