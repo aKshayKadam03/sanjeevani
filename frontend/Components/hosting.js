@@ -3,26 +3,9 @@ import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
 
-<<<<<<< HEAD
-import { useRouter } from "next/router";
-function hosts() {
-  const [users, setUsers] = useState([]);
-  const router = useRouter();
-  const fetcher = (url) => {
-    axios.get(url).then((res) => {
-      setUsers([res.data.data]);
-    });
-  };
-
-  useSwr("http://localhost:8080/host", fetcher);
-  let k = users[0];
-  console.log(k);
-=======
-function hosts({cards}) {
- 
+function hosts({ cards }) {
   let k = cards;
 
->>>>>>> 76a6faa76d4ab0c217374ce43406f287425b9942
   return (
     <div>
       {k?.map((i) => (
@@ -39,12 +22,7 @@ function hosts({cards}) {
               <h4>City - {i.city}</h4>
             </div>
           </div>
-          <button
-            className={styles.btn}
-            onClick={() => router.push(`/hostcard/${i.userId._id}`)}
-          >
-            Pledge
-          </button>
+          <button className={styles.btn}>Pledge</button>
         </div>
       ))}
     </div>

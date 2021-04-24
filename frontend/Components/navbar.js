@@ -11,11 +11,8 @@ import dynamic from "next/dynamic";
 import useSwr from "swr";
 import axios from "axios";
 
-<<<<<<< HEAD
-=======
 import Hero from "./hero";
 
->>>>>>> 76a6faa76d4ab0c217374ce43406f287425b9942
 const Seeks = dynamic(() => import("./seeks"));
 const Hosts = dynamic(() => import("./hosting"));
 
@@ -141,9 +138,6 @@ function navbar({ req, seek }) {
               Providing Help
             </button>
           </div>
-<<<<<<< HEAD
-          {!show ? <Seeks /> : <Hosts />}
-=======
           <div className={styles.cards}>
             {active === "seeks" ? (
               <Seeks cards={seeks} />
@@ -151,7 +145,6 @@ function navbar({ req, seek }) {
               <Hosts cards={hosts} />
             )}
           </div>
->>>>>>> 76a6faa76d4ab0c217374ce43406f287425b9942
         </div>
       </div>
     </div>

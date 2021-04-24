@@ -4,25 +4,9 @@ import axios from "axios";
 import styles from "../styles/users.module.css";
 import { useRouter } from "next/router";
 
-<<<<<<< HEAD
-function seeks() {
-  const [users, setUsers] = useState([]);
-  const router = useRouter();
-  const fetcher = (url) => {
-    axios.get(url).then((res) => {
-      setUsers([res.data.data]);
-    });
-  };
-
-  useSwr("http://localhost:8080/seek", fetcher);
-
-  let k = users[0];
-  console.log(k);
-=======
-function users({ cards }) {
+function seeks({ cards }) {
   const [users, setUsers] = useState([]);
   let k = cards;
->>>>>>> 76a6faa76d4ab0c217374ce43406f287425b9942
   return (
     <div>
       {k?.map((i) => (
@@ -40,12 +24,7 @@ function users({ cards }) {
             </div>
           </div>
           <div></div>
-          <button
-            className={styles.btn}
-            onClick={() => router.push(`/seekcard/${i.userId._id}`)}
-          >
-            Pledge
-          </button>
+          <button className={styles.btn}>Pledge</button>
         </div>
       ))}
     </div>
