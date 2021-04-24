@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
+import { useRouter } from "next/router";
 
 function hosts({ cards }) {
   let k = cards;
-
+  const router = useRouter();
   return (
     <div>
       {k?.map((i) => (
@@ -22,7 +22,14 @@ function hosts({ cards }) {
               <h4>City - {i.city}</h4>
             </div>
           </div>
-          <button className={styles.btn}>Pledge</button>
+          <button
+            className={styles.btn}
+            onClick={() => {
+              router.push(`/hostcard/${i._id}`);
+            }}
+          >
+            Pledge
+          </button>
         </div>
       ))}
     </div>

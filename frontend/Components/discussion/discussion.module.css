@@ -14,9 +14,14 @@
   align-items: center;
   font-size: 25px;
 }
+.DiscussionForum__Body ::-webkit-scrollbar {
+  display: none;
+}
 .DiscussionForum__Body {
   height: 247px;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .DiscussionForum__Input {
   /* border: 1px solid #aaa; */
