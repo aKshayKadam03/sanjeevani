@@ -1,6 +1,15 @@
 import { useRouter } from "next/router";
 import styles from "./card.module.css";
 import Discussion from "../../Components/discussion/discussion";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+} from "react-share";
+import { useEffect, useState } from "react";
 
 export const getServerSideProps = async () => {
   const res = await fetch("http://localhost:8080/user");
@@ -25,6 +34,12 @@ const hostcard = (props) => {
   const user = host.userId;
 
   const comments = props.comments.data;
+
+  const [link, setLink] = useState("");
+
+  useEffect(() => {
+    setLink(window.location.href);
+  }, []);
   return (
     <>
       <div className={styles.card}>
@@ -50,15 +65,26 @@ const hostcard = (props) => {
               {host[0].userId.phone}
             </h4>
             <div>
-              <button>
+              <a>
                 Chat <i class="fas fa-comments"></i>
-              </button>
-              <button>
+              </a>
+              <a href={`mailto:${host[0].userId.email}`}>
                 Email <i class="far fa-envelope"></i>
-              </button>
-              <button>
+              </a>
+              <a href={`tel:${host[0].userId.phone}`}>
                 Call <i class="fas fa-phone-alt"></i>
-              </button>
+              </a>
+              <div>
+                <FacebookShareButton url={link}>
+                  <FacebookIcon size={"2rem"} round={true} />
+                </FacebookShareButton>
+                <TwitterShareButton url={link}>
+                  <TwitterIcon size={"2rem"} round={true} />
+                </TwitterShareButton>
+                <WhatsappShareButton url={link}>
+                  <WhatsappIcon size={"2rem"} round={true} />
+                </WhatsappShareButton>
+              </div>
             </div>
           </div>
         </div>
