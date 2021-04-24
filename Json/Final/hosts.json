@@ -1,0 +1,80 @@
+[
+  {
+    "title": "REMEDYREPACK INC.",
+    "details": "Team-oriented clear-thinking functionalities",
+    "category": "608307d7efc44f2f9c2cadc9",
+    "tag" : "grocery",
+    "city": "nanjangud",
+    "location": {
+      "type": "Point",
+      "coordinates": [76.680000, 12.120000]
+    },
+    "claimed": false,
+    "userId": "60830325efc44f2f9c2cadbe"
+  },
+  {
+    "title": "Hospira, Inc.",
+    "details": "Team-oriented responsive encryption",
+    "category": "608307d7efc44f2f9c2cadca",
+    "tag" : "oxygen-cylinders",
+    "city": "chittorgarh",
+    "location": {
+      "type": "Point",
+      "coordinates": [74.629997, 24.879999]
+    },
+    "claimed": false,
+    "userId": "60830325efc44f2f9c2cadbf"
+  },
+  {
+    "title": "Allergan, Inc.",
+    "details": "Cloned 5th generation collaboration",
+    "category": "608307d7efc44f2f9c2cadcb",
+    "tag" : "plasma",
+    "city": "ratnagiri",
+    "location": {
+      "type": "Point",
+      "coordinates": [73.300003, 16.994444]
+    },
+    "claimed": false,
+    "userId": "60830325efc44f2f9c2cadc0"
+  },
+  {
+    "title": "H E B",
+    "details": "Secured system-worthy productivity",
+    "category": "608307d7efc44f2f9c2cadcb",
+    "tag" : "blood",
+    "city": "raipur",
+    "location": {
+      "type": "Point",
+      "coordinates": [81.629997, 21.250000]
+    },
+    "claimed": false,
+    "userId": "60830325efc44f2f9c2cadc1"
+  },
+  {
+    "title": "GM PHARMACEUTICALS,INC",
+    "details": "Cloned optimizing core",
+    "category": "608307d7efc44f2f9c2cadca",
+    "tag" : "medicines",
+    "city": "gokak",
+    "location": {
+      "type": "Point",
+      "coordinates": [74.833298, 16.166700]
+    },
+    "claimed": false,
+    "userId": "60830325efc44f2f9c2cadc2"
+  },
+  {
+    "title": "Kroger Company",
+    "details": "Centralized bifurcated algorithm",
+    "category": "608307d7efc44f2f9c2cadc9",
+    "tag" : "food",
+    "city": "delhi",
+    "location": {
+      "type": "Point",
+      "coordinates": [77.069710, 28.679079]
+    },
+    "claimed": false,
+    "userId": "60830325efc44f2f9c2cadc3"
+  }
+]
