@@ -45,11 +45,16 @@ function Navbar() {
             </Link>
           </>
         ) : (
-          <Link href="/">
-            <button onClick={onLogOutHandler} className={styles.signup}>
-              Logout
-            </button>
-          </Link>
+          <>
+            <Link href="/profile">
+              <button className={styles.signin}>Profile</button>
+            </Link>
+            <Link href="/">
+              <button onClick={onLogOutHandler} className={styles.signup}>
+                Logout
+              </button>
+            </Link>
+          </>
         )}
       </div>
     </div>
