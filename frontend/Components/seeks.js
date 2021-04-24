@@ -3,7 +3,6 @@ import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/navbar.module.css";
 import { useRouter } from "next/router";
-
 function seeks({ cards }) {
   const [users, setUsers] = useState([]);
   const router = useRouter();

@@ -49,11 +49,19 @@ const seekcard = (props) => {
             {seek[0].userId.phone}
           </h4>
           <div>
-            <button>Chat</button>
+            <button>
+              Chat <i class="fas fa-comments"></i>
+            </button>
+            <button>
+              Email <i class="far fa-envelope"></i>
+            </button>
+            <button>
+              Call <i class="fas fa-phone-alt"></i>
+            </button>
           </div>
         </div>
       </div>
-      <Discussion comments={comments} seek={seek} />
+      <Discussion comments={comments} seek={seek} boardId={id} board="seek" />
     </div>
   );
 };

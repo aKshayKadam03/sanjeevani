@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser, getUsers } from "../redux/Auth/actions";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Good = dynamic(() => import("../Components/navbar"));
 
@@ -13,7 +14,7 @@ function signup() {
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [pic, setPic] = useState("https://picsum.photos/200/300");
+  const [pic, setPic] = useState("https://picsum.photos/200/200");
   const [phone, setPhone] = useState("");
   const [pan, setPan] = useState("");
   const [verified, setVerified] = useState(true);
@@ -78,59 +79,65 @@ function signup() {
           <h4>Please Enter unique email</h4>
         </div>
       )}
-      <form onSubmit={createUser} className={styles.container}>
-        <h1>Sign Up</h1>
-        <label htmlFor="fst">First name</label>
-        <input
-          name="fst"
-          required
-          type="text"
-          onChange={(e) => setFirst(e.target.value)}
-        />
-        <label htmlFor="lst">Last Name</label>
-        <input
-          name="lst"
-          required
-          type="text"
-          onChange={(e) => setLast(e.target.value)}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          required
-          type="text"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="pass">Password</label>
-        <input
-          required
-          name="pass"
-          type="text"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="cell">Phone</label>
-        <input
-          name="cell"
-          required
-          type="text"
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <label htmlFor="pan">Pan No</label>
-        <input
-          name="pan"
-          required
-          type="text"
-          onChange={(e) => setPan(e.target.value)}
-        />
-        <label htmlFor="pic">Profile Picture</label>
-        <input
-          name="pic"
-          required
-          type="file"
-          onChange={(e) => handleChange(e)}
-        />
-        <button type="submit">Sign up</button>
-      </form>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          margin: "1% 5%",
+        }}
+      >
+        <form onSubmit={createUser} className={styles.container}>
+          <h1>Sign Up</h1>
+          <input
+            placeholder="First Name"
+            required
+            type="text"
+            onChange={(e) => setFirst(e.target.value)}
+          />
+          <input
+            placeholder="Last Name"
+            required
+            type="text"
+            onChange={(e) => setLast(e.target.value)}
+          />
+          <input
+            placeholder="Email Address"
+            required
+            type="text"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            required
+            placeholder="Password"
+            type="text"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            placeholder="Mobile No"
+            required
+            type="text"
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <input
+            placeholder="Pan No"
+            required
+            type="text"
+            onChange={(e) => setPan(e.target.value)}
+          />
+
+          <input
+            placeholder="Profile Picture"
+            required
+            type="file"
+            name="file"
+            onChange={(e) => handleChange(e)}
+          />
+          <button type="submit">Sign up</button>
+        </form>
+        <div style={{ margin: "10% 5%" }}>
+          <Image src="/up.svg" width={350} height={350} />
+        </div>
+      </div>
     </div>
   );
 }

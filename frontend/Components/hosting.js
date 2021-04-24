@@ -34,6 +34,7 @@ function hosts({ cards }) {
             </div>
           </div>
           <button
+            className={styles.PledgeButton}
             onClick={() => {
               router.push(`/hostcard/${i._id}`);
             }}
