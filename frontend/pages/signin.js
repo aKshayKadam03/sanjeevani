@@ -34,6 +34,7 @@ function signin() {
     a.data.map((i) => {
       if (i.email === email && i.password === password) {
         dispatch(getCurrentUser(i));
+        window.localStorage.setItem("currentUser", JSON.stringify(i));
         setShow(true);
         router.push("/");
         flag = false;
