@@ -4,6 +4,7 @@ let initState = {
   users: [],
   isLoading: false,
   isError: false,
+  currentUser: [],
 };
 const authReducer = (state = initState, action) => {
   switch (action.type) {
@@ -26,6 +27,15 @@ const authReducer = (state = initState, action) => {
         ...state,
         isError: true,
         isLoading: false,
+      };
+    }
+
+    case actionTypes.GET_CURRENT_USER: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        currentUser: action.payload,
       };
     }
     default: {

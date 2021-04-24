@@ -20,6 +20,7 @@ const defaultOptions = {
 };
 
 import Hero from "./hero";
+import { useSelector } from "react-redux";
 
 const Seeks = dynamic(() => import("./seeks"));
 const Hosts = dynamic(() => import("./hosting"));
@@ -130,6 +131,8 @@ function navbar() {
       .catch((err) => console.log(err));
   }
 
+  let a = useSelector((state) => state.auth.currentUser);
+  console.log("Current", a);
   return (
     <div>
       <div className={styles.Hero}>

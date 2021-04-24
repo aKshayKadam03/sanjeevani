@@ -3,6 +3,8 @@ import Head from "next/head";
 import navbar from "../Components/navbar";
 import dynamic from "next/dynamic";
 import axios from "axios";
+import { AppWrapper, useAppContext } from "../Context/UserContext";
+
 
 const GoodbyeDynamic = dynamic(() => import("../Components/navbar"));
 
@@ -18,6 +20,7 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ req, seek }) {
+
   return (
     <div>
       <GoodbyeDynamic req={req} seek={seek} />

@@ -5,8 +5,11 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
-function filter() {
+function Navbar() {
+  let a = useSelector((state) => state.auth.currentUser); //this is object of current User
+
   return (
     <div className={styles.container}>
       <div className={styles.navimg}>
@@ -26,4 +29,4 @@ function filter() {
   );
 }
 
-export default filter;
+export default Navbar;

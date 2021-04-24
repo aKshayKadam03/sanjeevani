@@ -1,0 +1,63 @@
+.container {
+  color: rgb(0, 0, 0);
+  width: 40%;
+  height: 450px;
+  text-align: center;
+  margin: 2% auto;
+  /* background-color: rgb(159, 249, 252); */
+}
+
+.container button {
+  color: white;
+  background: rgb(178, 75, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(178, 75, 233, 1) 44%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 15%;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.container input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.container p {
+  font-size: larger;
+}
+
+.h1 {
+  text-align: center;
+  margin: 0 0 10% 0;
+}
+
+.container > h1 {
+  font-weight: 700;
+}
+
+.dash {
+  color: white;
+  background: rgb(178, 75, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(178, 75, 233, 1) 44%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.wrong {
+  text-align: center;
+  margin-top: 2%;
+}
