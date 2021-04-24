@@ -88,7 +88,7 @@ function navbar({ req, seek }) {
   }
 
   let a = useSelector((state) => state.auth.currentUser);
-  console.log("Current", a);
+
   return (
     <div>
       <div className={styles.Hero}>

@@ -1,5 +1,6 @@
 import styles from "./discussion.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 export const getServerSideProps = async () => {
   const res = await fetch("http://localhost:8080/user");
   const res2 = await fetch("http://localhost:8080/host");
@@ -17,6 +18,14 @@ export const getServerSideProps = async () => {
 };
 
 function discussion({ comments, host, seek }) {
+  const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
+    }
+  }, []);
+
   //changing the hosts to seek so that we dont need different discussion module to generate for seeks
   //if it receives hosts, it shows hosts, if it get seek, it changes it to host and then shows
   if (host === undefined) {
@@ -29,7 +38,7 @@ function discussion({ comments, host, seek }) {
   };
   const hostId = host[0]._id;
   const hostComment = comments.filter((comment) => comment.boardId == hostId);
-
+  console.log("currentUser", currentUser);
   return (
     <div>
       <div className={styles.DiscussionForum}>

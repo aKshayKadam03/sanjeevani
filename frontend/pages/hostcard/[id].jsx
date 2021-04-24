@@ -21,12 +21,10 @@ export const getServerSideProps = async () => {
 const hostcard = (props) => {
   const router = useRouter();
   const { id } = router.query;
-
   const host = props.hosts.data.filter((user) => user._id == id);
   const user = host.userId;
 
   const comments = props.comments.data;
-
   return (
     <div className={styles.card}>
       <div className={styles.userDetails}>
