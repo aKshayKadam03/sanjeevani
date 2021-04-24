@@ -7,6 +7,8 @@ import { AppWrapper, useAppContext } from "../Context/UserContext";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser, getUsers } from "../redux/Auth/actions";
 
+import { useRouter } from "next/router";
+
 const Good = dynamic(() => import("../Components/navbar"));
 
 function signin() {
@@ -17,6 +19,8 @@ function signin() {
 
   let dispatch = useDispatch();
 
+  const router = useRouter();
+
   useEffect(() => {
     setShow(false);
     dispatch(getUsers());
@@ -26,43 +30,41 @@ function signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      a.data.map((i) => {
-        console.log(i);
-        if (i.email === email && i.password === password) {
-          dispatch(getCurrentUser(i));
-          setShow(true);
-        }
-      });
-    } catch (err) {
-      console.log(err);
+    var flag = true;
+    a.data.map((i) => {
+      if (i.email === email && i.password === password) {
+        dispatch(getCurrentUser(i));
+        setShow(true);
+        router.push("/");
+        flag = false;
+      }
+    });
+    if (flag) {
       setWrong(true);
     }
   };
 
   return (
-    <div className={styles.container}>
-      <h1>Log In</h1>
-
-      {show && (
-        <Link href="/">
-          <button> Go to Dashboard</button>
-        </Link>
+    <div>
+      {wrong && (
+        <div className={styles.wrong}>
+          <h4>Email or password is incorrect. Please try again</h4>
+        </div>
       )}
-      {wrong && <div>Email or password is incorrect. Please try again</div>}
 
-      <form onSubmit={handleSubmit}>
-        <h2>Email</h2>
+      <form onSubmit={handleSubmit} className={styles.container}>
+        <h1 className={styles.h1}>Log In</h1>
+        <p>Email</p>
         <input
           required
           type="text"
           onChange={(e) => setEmail(e.target.value)}
         />
         <br />
-        <h2>Password</h2>
+        <p>Password</p>
         <input
           required
-          type="text"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <br />
