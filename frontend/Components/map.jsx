@@ -13,6 +13,8 @@ const Map = () => {
   const [seeks, setSeeks] = React.useState([]);
   const [hosts, setHosts] = React.useState([]);
 
+  // let storage = localStorage.getItem()
+
   const fetcher = (url) => {
     axios.get(url).then((res) => {
       setSeeks(res.data.data);

@@ -2,6 +2,7 @@ import * as actionTypes from "./actionTypes";
 
 let initState = {
   users: [],
+  isAuth: false,
   isLoading: false,
   isError: false,
   currentUser: [],

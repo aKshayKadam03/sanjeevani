@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "all-the-cities": "^3.1.0",
     "antd": "^4.15.2",
     "apexcharts": "^3.26.1",
     "axios": "^0.21.1",

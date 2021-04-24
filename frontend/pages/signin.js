@@ -30,16 +30,16 @@ function signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    var flag = true;
-    a.data.map((i) => {
-      if (i.email === email && i.password === password) {
-        dispatch(getCurrentUser(i));
-        setShow(true);
-        router.push("/");
-        flag = false;
-      }
-    });
-    if (flag) {
+    try {
+      a.data.map((i) => {
+        if (i.email === email && i.password === password) {
+          dispatch(getCurrentUser(i));
+          window.localStorage.setItem("currentUser", JSON.stringify(i));
+          setShow(true);
+        }
+      });
+    } catch (err) {
+      console.log(err);
       setWrong(true);
     }
   };

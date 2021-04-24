@@ -23,7 +23,8 @@ function Navbar() {
         <FaFacebookSquare className={styles.icon} />
         <GrInstagram className={styles.icon} />
         <FaTwitter className={styles.icon} />
-        <button className={styles.donate}>Donate</button>
+        <button className={styles.signin}>Sign In</button>
+        <button className={styles.signup}>Sign Up</button>
       </div>
     </div>
   );
