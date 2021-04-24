@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
-import navbar from "./navbar";
 
+import { useRouter } from "next/router";
 function hosts() {
   const [users, setUsers] = useState([]);
-
+  const router = useRouter();
   const fetcher = (url) => {
     axios.get(url).then((res) => {
       setUsers([res.data.data]);
@@ -32,7 +32,12 @@ function hosts() {
               <h4>City - {i.city}</h4>
             </div>
           </div>
-          <button className={styles.btn}>Pledge</button>
+          <button
+            className={styles.btn}
+            onClick={() => router.push(`/hostcard/${i.userId._id}`)}
+          >
+            Pledge
+          </button>
         </div>
       ))}
     </div>

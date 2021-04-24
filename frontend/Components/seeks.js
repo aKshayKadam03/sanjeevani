@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
+import { useRouter } from "next/router";
 
-function users() {
+function seeks() {
   const [users, setUsers] = useState([]);
-
+  const router = useRouter();
   const fetcher = (url) => {
     axios.get(url).then((res) => {
       setUsers([res.data.data]);
@@ -13,6 +14,7 @@ function users() {
   };
 
   useSwr("http://localhost:8080/seek", fetcher);
+
   let k = users[0];
   console.log(k);
   return (
@@ -32,11 +34,16 @@ function users() {
             </div>
           </div>
           <div></div>
-          <button className={styles.btn}>Pledge</button>
+          <button
+            className={styles.btn}
+            onClick={() => router.push(`/seekcard/${i.userId._id}`)}
+          >
+            Pledge
+          </button>
         </div>
       ))}
     </div>
   );
 }
 
-export default users;
+export default seeks;

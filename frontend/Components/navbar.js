@@ -9,7 +9,7 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import dynamic from "next/dynamic";
 import axios from "axios";
 
-const Users = dynamic(() => import("./seeks"));
+const Seeks = dynamic(() => import("./seeks"));
 const Hosts = dynamic(() => import("./hosting"));
 
 function navbar({ req }) {
@@ -79,7 +79,7 @@ function navbar({ req }) {
               Hosting
             </button>
           </div>
-          {show ? <Users /> : <Hosts />}
+          {!show ? <Seeks /> : <Hosts />}
         </div>
       </div>
     </div>
