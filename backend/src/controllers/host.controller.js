@@ -36,14 +36,13 @@ router.post("/gethosts", async (req, res) => {
   } else {
     arr = req.body;
   }
- 
+
   const host = await Host.find({ category: { $in: arr } })
     .populate("userId")
     .populate("category")
     .lean()
     .exec();
-    console.log(arr,"arr")
-console.log(host,"host")
+
   return res.status(200).json({ data: host });
 });
 

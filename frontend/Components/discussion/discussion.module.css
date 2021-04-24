@@ -1,23 +1,22 @@
 .DiscussionForum {
-  border: 1px solid #ddd;
   border-radius: 5px;
   margin: 10px 0;
   background-color: rgba(255, 255, 255, 0.61);
-  height: 350px;
+  background: #ffffffb0;
+  box-shadow: 5px 5px 24px #e0e0e081, -5px -5px 24px #ffffff5e;
 }
 .DiscussionForum__Title {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 2px solid #4283fd94;
   /* border-radius: 5px; */
   height: 50px;
   padding: 2%;
   display: flex;
   align-items: center;
-  font-size: 25px;
+  color: #212121c0;
+  font-size: 20px;
+  font-weight: 600;
 }
-.DiscussionForum__Body {
-  height: 247px;
-  overflow-y: scroll;
-}
+
 .DiscussionForum__Input {
   /* border: 1px solid #aaa; */
   border-radius: 5px;
@@ -42,7 +41,7 @@
 }
 .DiscussionForum__Input > button {
   width: 20%;
-  background-color: #212121;
+  background-color: #4285f4;
   font-size: 18px;
   color: white;
   border-top-left-radius: 0;
@@ -56,7 +55,7 @@
   margin: 10px auto;
   /* height: 50px; */
   background: #ffffffa6;
-  box-shadow: 10px 10px 20px #d6d6d698, -10px -10px 20px #ffffff91;
+  box-shadow: 5px 5px 15px #42424262;
 }
 
 .Comment > * {
@@ -71,4 +70,7 @@
 }
 .Comment__Right > * {
   margin: 0;
+}
+.Comment__Right > h4 {
+  color: #405de6;
 }

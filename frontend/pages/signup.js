@@ -14,7 +14,7 @@ function signup() {
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [pic, setPic] = useState("https://picsum.photos/200/300");
+  const [pic, setPic] = useState("https://picsum.photos/200/200");
   const [phone, setPhone] = useState("");
   const [pan, setPan] = useState("");
   const [verified, setVerified] = useState(true);

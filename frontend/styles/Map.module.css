@@ -1,10 +1,50 @@
 .Wrapper {
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.Map {
+.Wrapper > div:nth-child(1) {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapContent {
+  position: relative;
+}
+
+.miniWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.miniWrapper > div:nth-child(1) {
   width: 80%;
-  height: 80vh;
+}
+
+.miniWrapper > div:nth-child(2) {
+  width: 20%;
+}
+
+/* .mapInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto 0;
+} */
+
+.Map {
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -37,15 +77,6 @@
 .marker {
 }
 
-.mapInfo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1000px;
-  margin: 20px auto 0;
-}
-
 .mapInfo > div:nth-child(1) {
   display: flex;
   align-items: center;
@@ -53,23 +84,33 @@
 }
 
 .Legend {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  background-color: #d3d3c591;
+  /* opacity: 0.8; */
+  z-index: 9999999999999999;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  padding: 50px;
+  border-radius: 5px;
 }
 
 .Legend h4 {
   margin: 0;
+  font-weight: 800;
+}
+
+.Legend p {
+  margin: 10px;
+  font-weight: 600;
 }
 
 .Legend img {
   width: 20px;
   height: 20px;
   margin: 0 10px;
-}
-
-.Legend p {
-  margin: 10px;
 }
 
 .Legend div {

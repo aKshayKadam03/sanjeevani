@@ -24,6 +24,7 @@
     "react-leaflet": "^3.1.0",
     "react-lottie": "^1.2.3",
     "react-redux": "^7.2.3",
+    "react-share": "^4.4.0",
     "react-strap": "^0.0.1",
     "reactstrap": "^8.9.0",
     "redux": "^4.0.5",

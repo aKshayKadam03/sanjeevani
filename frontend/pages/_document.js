@@ -10,6 +10,10 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <script
+            src="https://kit.fontawesome.com/249783f98b.js"
+            crossorigin="anonymous"
+          ></script>
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
           <script
             src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"
