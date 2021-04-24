@@ -4,6 +4,7 @@ import axios from "axios";
 import styles from "../styles/users.module.css";
 import { useRouter } from "next/router";
 
+<<<<<<< HEAD
 function seeks() {
   const [users, setUsers] = useState([]);
   const router = useRouter();
@@ -17,6 +18,11 @@ function seeks() {
 
   let k = users[0];
   console.log(k);
+=======
+function users({ cards }) {
+  const [users, setUsers] = useState([]);
+  let k = cards;
+>>>>>>> 76a6faa76d4ab0c217374ce43406f287425b9942
   return (
     <div>
       {k?.map((i) => (

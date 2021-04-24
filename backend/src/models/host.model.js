@@ -22,7 +22,7 @@ const hostSchema = new mongoose.Schema(
       },
     },
     category: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       ref: "categories",
       required: true,
     },

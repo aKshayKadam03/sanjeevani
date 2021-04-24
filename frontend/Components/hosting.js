@@ -3,6 +3,7 @@ import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
 
+<<<<<<< HEAD
 import { useRouter } from "next/router";
 function hosts() {
   const [users, setUsers] = useState([]);
@@ -16,6 +17,12 @@ function hosts() {
   useSwr("http://localhost:8080/host", fetcher);
   let k = users[0];
   console.log(k);
+=======
+function hosts({cards}) {
+ 
+  let k = cards;
+
+>>>>>>> 76a6faa76d4ab0c217374ce43406f287425b9942
   return (
     <div>
       {k?.map((i) => (
