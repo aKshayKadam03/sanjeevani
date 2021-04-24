@@ -13,7 +13,28 @@ router.get("/", async (req, res) => {
   return res.status(200).json({ data: seek });
 });
 
-
+router.post("/getseeks", async (req, res) => {
+  let arr = [];
+  if (req.body.length === 0) {
+    arr = [
+      "608307d7efc44f2f9c2cadcd",
+      "608307d7efc44f2f9c2cadcc",
+      "608307d7efc44f2f9c2cadcb",
+      "608307d7efc44f2f9c2cadca",
+      "608307d7efc44f2f9c2cadc9",
+    ];
+  } else {
+    arr = req.body;
+  }
+  const user = await User.find().lean().exec();
+  const seek = await Seek.find({ category: { $in: arr } })
+    .populate("userId")
+    .populate("category")
+    .lean()
+    .exec();
+  console.log("From Seek");
+  return res.status(200).json({ data: seek });
+});
 
 router.get("/:id", async (req, res) => {
   const seek = await Seek.findById(req.params.id)

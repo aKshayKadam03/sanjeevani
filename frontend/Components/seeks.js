@@ -2,20 +2,10 @@ import React, { useState } from "react";
 import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
+import { useRouter } from "next/router";
 
-function users({ cards }) {
+function seeks({ cards }) {
   const [users, setUsers] = useState([]);
-
-  const fetcher = (url) => {
-    axios.get(url).then((res) => {
-      setUsers([res.data.data]);
-    });
-  };
-
-  useSwr("http://localhost:8080/seek", fetcher);
-  // let k = users[0];
-  // console.log(k, "k");
-  // console.log(cards.data, "cards");
   let k = cards;
   return (
     <div>
@@ -41,4 +31,4 @@ function users({ cards }) {
   );
 }
 
-export default users;
+export default seeks;

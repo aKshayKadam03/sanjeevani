@@ -10,8 +10,8 @@ function Navbar() {
   return (
     <div className={styles.container}>
       <div className={styles.navimg}>
-        <AiFillThunderbolt className={styles.logo} />
-        <h3>Sanjeevani</h3>
+        {/* <AiFillThunderbolt className={styles.logo} /> */}
+        <img width="110px" src="./images/logo.png" alt="logo"></img>
       </div>
       <div className={styles.navinfo}>
         <Link href="/">About us</Link>

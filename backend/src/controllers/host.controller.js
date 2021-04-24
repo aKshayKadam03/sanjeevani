@@ -23,6 +23,30 @@ router.get("/:id", async (req, res) => {
   return res.status(200).json({ data: host });
 });
 
+router.post("/gethosts", async (req, res) => {
+  let arr = [];
+  if (req.body.length === 0) {
+    arr = [
+      "608307d7efc44f2f9c2cadcd",
+      "608307d7efc44f2f9c2cadcc",
+      "608307d7efc44f2f9c2cadcb",
+      "608307d7efc44f2f9c2cadca",
+      "608307d7efc44f2f9c2cadc9",
+    ];
+  } else {
+    arr = req.body;
+  }
+ 
+  const host = await Host.find({ category: { $in: arr } })
+    .populate("userId")
+    .populate("category")
+    .lean()
+    .exec();
+    console.log(arr,"arr")
+console.log(host,"host")
+  return res.status(200).json({ data: host });
+});
+
 router.post("/", async (req, res) => {
   const host = await Host.create(req.body);
   return res.status(201).json({ data: host });

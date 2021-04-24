@@ -1,0 +1,44 @@
+.card {
+  border: 1px solid #ccc;
+  min-height: 600px;
+  width: 80%;
+  margin: 5% auto;
+  padding: 2%;
+  background-color: #80deea;
+}
+.userDetails {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff93;
+}
+
+.userDetails__Left {
+  /* border: 1px solid red; */
+  height: 320px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userDetails__Right {
+  /* border: 1px solid red; */
+  height: 320px;
+  width: 80%;
+}
+.userDetails__Right > div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+}
+.userDetails__Right > div > button {
+  background-color: #212121;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+}

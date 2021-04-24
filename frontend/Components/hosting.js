@@ -2,20 +2,10 @@ import React, { useState } from "react";
 import useSwr from "swr";
 import axios from "axios";
 import styles from "../styles/users.module.css";
-import navbar from "./navbar";
 
-function hosts() {
-  const [users, setUsers] = useState([]);
+function hosts({ cards }) {
+  let k = cards;
 
-  const fetcher = (url) => {
-    axios.get(url).then((res) => {
-      setUsers([res.data.data]);
-    });
-  };
-
-  useSwr("http://localhost:8080/host", fetcher);
-  let k = users[0];
-  console.log(k);
   return (
     <div>
       {k?.map((i) => (

@@ -1,0 +1,74 @@
+.DiscussionForum {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.61);
+  height: 350px;
+}
+.DiscussionForum__Title {
+  border-bottom: 1px solid #ddd;
+  /* border-radius: 5px; */
+  height: 50px;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+.DiscussionForum__Body {
+  height: 247px;
+  overflow-y: scroll;
+}
+.DiscussionForum__Input {
+  /* border: 1px solid #aaa; */
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.DiscussionForum__Input > * {
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.DiscussionForum__Input > input {
+  width: 80%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  padding: 0 2%;
+  /* opacity: 0.5; */
+}
+.DiscussionForum__Input > button {
+  width: 20%;
+  background-color: #212121;
+  font-size: 18px;
+  color: white;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.Comment {
+  /* border: 1px solid grey; */
+  border-radius: 5px;
+  display: flex;
+  width: 95%;
+  margin: 10px auto;
+  /* height: 50px; */
+  background: #ffffffa6;
+  box-shadow: 10px 10px 20px #d6d6d698, -10px -10px 20px #ffffff91;
+}
+
+.Comment > * {
+  margin: 2%;
+}
+.Comment__Left {
+  display: flex;
+  align-items: center;
+}
+.Comment__Left > img {
+  border-radius: 100%;
+}
+.Comment__Right > * {
+  margin: 0;
+}
