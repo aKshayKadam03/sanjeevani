@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
 import store from "../redux/store";
 import Navbar1 from "../pages/navbar1";
+import Footer from "../Components/footer";
 
 class MyApp extends App {
   render() {
@@ -13,6 +14,7 @@ class MyApp extends App {
       <Provider store={store}>
         <Navbar1 />
         <Component {...pageProps}></Component>
+        <Footer></Footer>
       </Provider>
     );
   }

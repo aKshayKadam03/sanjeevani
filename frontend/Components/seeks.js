@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import useSwr from "swr";
-import axios from "axios";
+
 import styles from "../styles/navbar.module.css";
 import { useRouter } from "next/router";
 function seeks({ cards }) {
@@ -18,7 +17,7 @@ function seeks({ cards }) {
           <div className={styles.SeekCardDetails}>
             <div>
               <h4>
-                <button className={styles.HaveButton}>Have</button> {i.title}
+                <button className={styles.NeedButton}>Need</button> {i.title}
               </h4>
             </div>
             <div>
