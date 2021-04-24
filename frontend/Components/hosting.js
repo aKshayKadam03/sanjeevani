@@ -1,34 +1,45 @@
 import React, { useState } from "react";
 import axios from "axios";
-import styles from "../styles/users.module.css";
+import styles from "../styles/navbar.module.css";
+import navbar from "./navbar";
 import { useRouter } from "next/router";
-
 function hosts({ cards }) {
   let k = cards;
   const router = useRouter();
   return (
     <div>
       {k?.map((i) => (
-        <div className={styles.card} key={i._id}>
-          <div style={{ display: "flex" }}>
+        <div className={styles.SeekCard} key={i._id}>
+          <div>
+            <img src={i.userId.img} alt="hi" />
+          </div>
+          <div className={styles.SeekCardDetails}>
             <div>
-              <img src={i.userId.img} alt="hi" />
+              <h4>
+                <button className={styles.HaveButton}>Have</button> {i.title}
+              </h4>
             </div>
-            <div style={{ marginLeft: "5%" }}>
-              <h3>
-                Name - {i.userId.firstName} {i.userId.lastName}
-              </h3>
-              <h3>Seeking title - {i.title}</h3>
-              <h4>City - {i.city}</h4>
+            <div>
+              <p>{i.details}</p>
+            </div>
+            <div>
+              <div>
+                <h4>
+                  {i.userId.firstName} {i.userId.lastName}
+                </h4>
+              </div>
+              <div>
+                <h4>Location : {i.city}</h4>
+              </div>
             </div>
           </div>
           <button
-            className={styles.btn}
+            className={styles.PledgeButton}
             onClick={() => {
               router.push(`/hostcard/${i._id}`);
             }}
           >
-            Pledge
+            <i className="fas fa-hands"></i> Pledge
           </button>
         </div>
       ))}
