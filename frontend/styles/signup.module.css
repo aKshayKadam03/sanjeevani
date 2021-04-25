@@ -13,11 +13,11 @@
 
 .container h1 {
   text-align: center;
-  font-weight: 680;
+  font-weight: 600;
 }
 
 .container input {
-  margin: 2% 0;
+  margin: 1% 0;
 }
 
 .container button {
