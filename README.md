@@ -11,6 +11,15 @@ npm install
 You will require .env file to run the application, contact the contributors or create your own.
 ```
 
+## Technology Stack Used
+* Next JS
+* React
+* Redux
+* Express
+* MongoDB
+* Mongoose
+* Node JS
+
 ## Packages
 ```
 antd
