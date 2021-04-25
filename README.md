@@ -41,6 +41,14 @@ LoremPicsum
 ```
 
 ## Screenshots
+ 
+![home](https://user-images.githubusercontent.com/39058941/115980813-38744000-a5ad-11eb-84ee-11823f9dad9f.png)
+![login](https://user-images.githubusercontent.com/39058941/115980814-3a3e0380-a5ad-11eb-9e49-584a7c140f8b.png)
+![map](https://user-images.githubusercontent.com/39058941/115980815-3ad69a00-a5ad-11eb-8e25-2a30ca78189a.png)
+![signup](https://user-images.githubusercontent.com/39058941/115980816-3b6f3080-a5ad-11eb-9825-c78828e8beff.png)
+![solo](https://user-images.githubusercontent.com/39058941/115980817-3c07c700-a5ad-11eb-8b94-65d67528ebb2.png)
+![dashboard](https://user-images.githubusercontent.com/39058941/115980818-3ca05d80-a5ad-11eb-8196-b7fac8531eee.png)
+![form](https://user-images.githubusercontent.com/39058941/115980819-3d38f400-a5ad-11eb-9548-a526d7811657.png)
 
 
 ## Contributing
