@@ -26,8 +26,7 @@
 }
 .userDetails__Left > img {
   margin: 100px;
-  display: block;
-
+  /* display: block; */
   border-radius: 100%;
   background: #cca92c;
   cursor: pointer;
@@ -36,7 +35,6 @@
 }
 .userDetails__Right {
   /* border: 1px solid red; */
-
   width: 80%;
   display: flex;
   flex-direction: column;
