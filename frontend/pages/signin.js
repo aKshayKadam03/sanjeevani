@@ -38,37 +38,33 @@ function signin() {
   };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {wrong && (
         <div className={styles.wrong}>
           <h4>Email or password is incorrect. Please try again</h4>
         </div>
       )}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          margin: "1% 10%",
-        }}
-      >
-        <form onSubmit={handleSubmit} className={styles.container}>
-          <h1 className={styles.h1}>Log In</h1>
-          <input
-            placeholder="Email"
-            required
-            type="text"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <br />
-          <input
-            placeholder="Password"
-            required
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+      <div className={styles.parentContainer}>
+        <div>
+          <form onSubmit={handleSubmit} className={styles.container}>
+            <h1 className={styles.h1}>Log In</h1>
+            <input
+              placeholder="Email"
+              required
+              type="text"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <br />
+            <input
+              placeholder="Password"
+              required
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
         <div>
           <Image src="/un.svg" width={350} height={350} />
         </div>

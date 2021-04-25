@@ -228,6 +228,8 @@
 }
 .SeekCard > div:nth-child(1) img {
   border-radius: 50%;
+  width: 140px;
+  height: 140px;
 }
 
 .SeekCard > div:nth-child(2) {
