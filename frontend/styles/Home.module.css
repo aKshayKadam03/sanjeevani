@@ -120,3 +120,13 @@
     flex-direction: column;
   }
 }
+
+.footer {
+  height: 40px;
+  border-top: 1px solid rgb(212, 209, 209);
+  background-color: rgb(255, 255, 255);
+}
+
+.footer h4 {
+  color: rgb(49, 46, 46);
+}

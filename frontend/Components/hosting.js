@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from "../styles/navbar.module.css";
-import navbar from "./navbar";
 import { useRouter } from "next/router";
+
 function hosts({ cards }) {
   let k = cards;
   const router = useRouter();
@@ -38,6 +38,7 @@ function hosts({ cards }) {
             onClick={() => {
               router.push(`/hostcard/${i._id}`);
             }}
+            className={styles.PledgeButton}
           >
             <i className="fas fa-hands"></i> Pledge
           </button>

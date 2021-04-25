@@ -1,5 +1,27 @@
+.wrapper {
+  min-height: 90vh;
+}
+
+.parentContainer {
+  display: flex;
+  min-height: 90vh;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.parentContainer > div {
+  width: 50%;
+}
+
+.parentContainer > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
-  width: 40%;
+  /* width: 40%; */
   height: 450px;
   text-align: center;
   margin: 2%;

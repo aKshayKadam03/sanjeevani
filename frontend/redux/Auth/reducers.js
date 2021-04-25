@@ -2,6 +2,7 @@ import * as actionTypes from "./actionTypes";
 
 let initState = {
   users: [],
+  isAuth: false,
   isLoading: false,
   isError: false,
   currentUser: [],
@@ -35,9 +36,19 @@ const authReducer = (state = initState, action) => {
         ...state,
         isLoading: false,
         isError: false,
+        isAuth: true,
         currentUser: action.payload,
       };
     }
+
+    case actionTypes.LOGOUT_USER: {
+      return {
+        ...state,
+        isAuth: false,
+        currentUser: [],
+      };
+    }
+
     default: {
       return state;
     }

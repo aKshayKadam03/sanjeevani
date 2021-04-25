@@ -50,3 +50,9 @@ export const getUsers = () => async (dispatch) => {
 export const getCurrentUser = (i) => (dispatch) => {
   dispatch(getCurrent(i));
 };
+
+export const handleLogOut = () => {
+  return {
+    type: actionTypes.LOGOUT_USER,
+  };
+};
