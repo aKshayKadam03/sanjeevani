@@ -53,7 +53,7 @@ const Map = () => {
             ]}
             icon={L.icon({
               iconUrl: "/images/marker-icon.png",
-              iconSize: [24, 32],
+              iconSize: [35, 45],
               iconAnchor: [10, 41],
             })}
           >
