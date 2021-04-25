@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>Sanjeevani</title>
           <link
             rel="icon"
             href="https://image.flaticon.com/icons/png/512/702/702753.png"
