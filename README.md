@@ -61,6 +61,6 @@ LoremPicsum
 
 
 ## Contributing
-[Harsh Gaur](https://github.com/iharshgaur)
-[Akshay Kadam](https://github.com/therealdrtroll)
-[Ashish Huddar](https://github.com/ashish921998)
+* [Harsh Gaur](https://github.com/iharshgaur)
+* [Akshay Kadam](https://github.com/therealdrtroll)
+* [Ashish Huddar](https://github.com/ashish921998)
