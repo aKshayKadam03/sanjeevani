@@ -60,7 +60,7 @@ LoremPicsum
 ![form](https://user-images.githubusercontent.com/39058941/115980819-3d38f400-a5ad-11eb-9548-a526d7811657.png)
 
 
-## Contributing
+## Contributors
 * [Harsh Gaur](https://github.com/iharshgaur)
 * [Akshay Kadam](https://github.com/therealdrtroll)
 * [Ashish Huddar](https://github.com/ashish921998)
