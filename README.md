@@ -22,7 +22,7 @@ We have built a platform where hosting and seeking a service is made very easy a
 
 ## Installation
 ```
-git clone https://github.com/therealdrtroll/Sanjeevani.git <your_directory_name>
+git clone https://github.com/therealdrtroll/Sanjeevani.git  
 npm install
 You will require .env file to run the application, contact the contributors or create your own.
 ```
