@@ -4,6 +4,16 @@ Sanjeevani is a webapp aiming to solve the current crisis in the world by connec
 
 We have built a platform where hosting and seeking a service is made very easy and assessible to all from a one website.
 
+## Masai Hackathon 2021
+ 
+ ### Judges
+ * Girish Utagi | Managing Principal (Director) @ Capco, India 
+ * Pradeep Sreeram | Head of Engineering @ EatFit, India 
+ 
+ ### Outcome
+ * Winner of Masai Hackathon 2021
+
+
 ## Installation
 ```
 git clone https://github.com/therealdrtroll/Sanjeevani.git <your_directory_name>
