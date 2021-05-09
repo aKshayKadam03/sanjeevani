@@ -32,7 +32,7 @@ router.post("/getseeks", async (req, res) => {
     .populate("category")
     .lean()
     .exec();
-  console.log("From Seek");
+
   return res.status(200).json({ data: seek });
 });
 

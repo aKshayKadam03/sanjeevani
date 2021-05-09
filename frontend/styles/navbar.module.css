@@ -24,6 +24,7 @@
   color: rgb(18, 22, 22);
   font-weight: 600;
   border-bottom: 1px solid rgb(255, 255, 255);
+  font-size: 18px;
 }
 
 .navinfo > a :hover {
@@ -32,16 +33,16 @@
 
 .signup {
   margin: 0 15px;
-  padding: 2px 15px;
+  padding: 8px 15px;
   border-radius: 5px;
   outline: none;
   font-size: 16px;
   font-weight: 400;
   color: white;
   background-color: rgb(11, 140, 226);
-  border: 1px solid rgb(11, 140, 226);
+  border: 2px solid rgb(11, 140, 226);
   transition: all 500ms ease;
-  min-width: 90px;
+  min-width: 120px;
 }
 
 .signup:hover {
@@ -50,7 +51,7 @@
 
 .signin {
   margin: 0 15px;
-  padding: 2px 15px;
+  padding: 8px 15px;
   border-radius: 5px;
   outline: none;
   font-size: 16px;
@@ -58,9 +59,9 @@
   color: white;
   background-color: white;
   color: rgb(11, 140, 226);
-  border: 1px solid rgb(11, 140, 226);
+  border: 2px solid rgb(11, 140, 226);
   transition: all 500ms ease;
-  min-width: 90px;
+  min-width: 120px;
 }
 
 .signin:hover {
@@ -71,8 +72,8 @@
 
 .icon {
   margin: 0 1%;
-  font-size: 1.2em;
   color: #373e42;
+  font-size: 18px;
 }
 
 .logo {

@@ -13,13 +13,11 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log(req.body);
   const user = await User.create(req.body);
   return res.status(201).json({ data: user });
 });
 
 router.patch("/:id", async (req, res) => {
-  console.log(req.params.id);
   const user = await User.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });

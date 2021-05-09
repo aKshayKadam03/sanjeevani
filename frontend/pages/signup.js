@@ -73,7 +73,7 @@ function signup() {
   };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {wrong && (
         <div className={styles.wrong}>
           <h4>Please Enter unique email</h4>
@@ -125,13 +125,13 @@ function signup() {
             onChange={(e) => setPan(e.target.value)}
           />
 
-          <input
+          {/* <input
             placeholder="Profile Picture"
             required
             type="file"
             name="file"
             onChange={(e) => handleChange(e)}
-          />
+          /> */}
           <button type="submit">Sign up</button>
         </form>
         <div style={{ margin: "10% 5%" }}>

@@ -18,7 +18,6 @@ router.post("/", async (req, res) => {
 });
 
 router.patch("/:id", async (req, res) => {
-  console.log(req.params.id);
   const comments = await Comment.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });

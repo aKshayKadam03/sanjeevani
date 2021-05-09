@@ -47,7 +47,7 @@ function signin() {
       <div className={styles.parentContainer}>
         <div>
           <form onSubmit={handleSubmit} className={styles.container}>
-            <h1 className={styles.h1}>Log In</h1>
+            <h1 className={styles.h1}>Sign In</h1>
             <input
               placeholder="Email"
               required
@@ -62,7 +62,7 @@ function signin() {
               onChange={(e) => setPassword(e.target.value)}
             />
             <br />
-            <button type="submit">Submit</button>
+            <button type="submit">Sign in</button>
           </form>
         </div>
         <div>

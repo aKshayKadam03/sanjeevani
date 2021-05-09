@@ -26,29 +26,31 @@
   text-align: center;
   margin: 2%;
   padding-top: 50px;
-  border: 1px solid rgb(77, 165, 224);
   border-radius: 10px;
 }
 
 .container button {
   color: white;
+  width: 300px;
+  text-transform: uppercase;
   background-color: rgb(77, 165, 224);
-  width: 350px;
-  height: 40px;
-  border-radius: 10px;
-  margin-top: 5%;
-  font-weight: 700;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-weight: 400;
+  letter-spacing: 0.4ch;
   font-size: 18px;
   border: none;
+  margin: 20px;
 }
 
 .container input {
-  width: 350px;
-  height: 40px;
+  width: 80%;
   margin: 2% 0;
-  border: none;
-  border-bottom: 2px solid rgb(77, 165, 224);
-  outline: none;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(228, 224, 224);
+  outline-color: rgb(230, 225, 225);
 }
 
 .container p {
