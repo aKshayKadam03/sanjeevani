@@ -1,10 +1,4 @@
-# Sanjeevani
-
-Sanjeevani is a webapp aiming to solve the current crisis in the world by connecting hosts and seekers by providing them a platform for communication, fund raising, sharing their stories and much more.
-
-We have built a platform where hosting and seeking a service is made very easy and assessible to all from a one website.
-
-## Masai Hackathon 2021
+# Masai Hackathon 2021
  
  ### Judges
  * Girish Utagi | Managing Principal (Director) @ Capco, India 
@@ -12,6 +6,14 @@ We have built a platform where hosting and seeking a service is made very easy a
  
  ### Outcome
  * Winner of Masai Hackathon 2021
+
+
+# Sanjeevani
+
+Sanjeevani is a webapp aiming to solve the current crisis in the world by connecting hosts and seekers by providing them a platform for communication, fund raising, sharing their stories and much more.
+
+We have built a platform where hosting and seeking a service is made very easy and assessible to all from a one website.
+
 
 
 ## Installation
