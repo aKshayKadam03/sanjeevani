@@ -18,13 +18,24 @@ We have built a platform where hosting and seeking a service is made very easy a
 
 [Live Demo](https://sanj-front.vercel.app/)
 
+## Features
+ * Signup and Login.
+ * Users who are seeking help or who can provide help can post about the same.
+ * Users can also read through the map and provide help or seek help depending upon location.
+ * Allows users to have records of all the provided and seeked helps by giving them badges.
+ * Lets users have discussion below a post.
+ * Lets users contact each other without any middle man.
 
+## Known Issues
+ * Not responsive for tablets and phones.
+ * There are some distortions in ui.
 
 ## Installation
 ```
-git clone https://github.com/therealdrtroll/Sanjeevani.git  
-npm install
-You will require .env file to run the application, contact the contributors or create your own.
+* git clone https://github.com/therealdrtroll/Sanjeevani.git.  
+* npm install for both frontend and backend seperately.
+* you will need to have a mongodb atlas accound connect the database to it.
+* you will require .env file to run the application, contact the contributors or create your own.
 ```
 
 ## Technology Stack Used
