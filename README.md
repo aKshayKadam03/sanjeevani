@@ -16,6 +16,8 @@ We have built a platform where hosting and seeking a service is made very easy a
  ### Outcome
  * Winner of Masai Hackathon 2021
 
+
+#### Note : It takes a while to start the backend, please refresh after few seconds after first launch while watching the demo.
 [Live Demo](https://sanj-front.vercel.app/)
 
 ## Features
